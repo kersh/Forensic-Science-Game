@@ -1,0 +1,7 @@
+# This file allows only google see my website.
+
+User-agent: Google
+Disallow:
+
+User-agent: *
+Disallow: /
