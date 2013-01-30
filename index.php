@@ -23,7 +23,7 @@ try {
 
 	// fetch all errors from user input form.
 	$error = !isset($_GET['error']) ? 'ok' : $_GET['error'];
-	$username = $_GET['username'];
+	$username = (!isset($_GET['username'])) ? '' : $_GET['username'];
 
 	// Lowercase
 	$action = strtolower($action);
@@ -32,6 +32,8 @@ try {
 	$action_file = sprintf("actions/%s.php", $action);
 
 	if(file_exists($action_file)) {
+		// if($action_file == "actions/login.php");
+		// 	// show main page
 		include($action_file);
 	} else {
 		throw new Exception('Page not found');
