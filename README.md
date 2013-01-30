@@ -11,7 +11,7 @@ Software Engineering Course
 
 The Latest Version
 ------------------
-Version 0.1.
+Version 0.2
 
 
 What is it?
