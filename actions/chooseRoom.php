@@ -1,6 +1,4 @@
 <?php
-// Inialize session
-// session_start();
 
 // Check, if student_number session is NOT set then this page will jump to login page
 if (!isset($_SESSION['student_number'])) {
