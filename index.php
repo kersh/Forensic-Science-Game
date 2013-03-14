@@ -5,15 +5,24 @@
 // Start user session
 session_start();
 
-// if (isset($_SESSION['username'])) {
-// 	header('Location: chooseRoom.php');
-// }
-
 include('classes/db.class.php');
 
 try {
+	// Get DB data from file. For secure reason it's in separate file.
+	$dbFileName = "dbSecuredData.txt";
+	$dataFromFile = file($dbFileName, FILE_IGNORE_NEW_LINES);
+
+	// check file and find DB data.
+	foreach ($dataFromFile as $key => &$value) {
+		$arr = explode("\t", $value);
+	}
+	$dbHost = $arr[0];
+	$dbUser = $arr[1];
+	$dbPassword = $arr[2];
+	$dbDb = $arr[3];
+
 	// Create DB connection
-	$db = new db("localhost", "UniversityUser", "password", "university_game");
+	$db = new db($dbHost, $dbUser, $dbPassword, $dbDb);
 
 	// default action authorization
 	$action = !isset($_GET['action']) ? 'login' : $_GET['action'];
@@ -23,7 +32,7 @@ try {
 
 	// fetch all errors from user input form.
 	$error = !isset($_GET['error']) ? 'ok' : $_GET['error'];
-	$username = (!isset($_GET['username'])) ? '' : $_GET['username'];
+	$student_number = (!isset($_GET['student_number'])) ? '' : $_GET['student_number'];
 
 	// Lowercase
 	$action = strtolower($action);
@@ -32,8 +41,6 @@ try {
 	$action_file = sprintf("actions/%s.php", $action);
 
 	if(file_exists($action_file)) {
-		// if($action_file == "actions/login.php");
-		// 	// show main page
 		include($action_file);
 	} else {
 		throw new Exception('Page not found');
@@ -51,5 +58,4 @@ include("templates/header.html.php");
 include(sprintf("templates/%s.html.php", $action));
 include("templates/footer.html.php");
 
-// printf("action = %s <br/>", $action);
 ?>

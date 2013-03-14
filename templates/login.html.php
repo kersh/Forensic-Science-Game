@@ -2,7 +2,7 @@
 	<form name="login" action="index.php?action=auth" method="post" accept-charset="utf-8">
 		<ul>
 			<li><label for="login">Username</label>
-			<input type="text" name="username" placeholder="username" value="<?php echo $username ?>" required></li>
+			<input type="text" name="student_number" placeholder="student number" value="<?php echo $student_number ?>" required></li>
 			<li><label for="password">Password</label>
 			<input type="password" name="password" placeholder="password" required></li>
 			<li>

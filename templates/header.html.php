@@ -21,8 +21,6 @@
 			<h1>University of Wolverhampton</h1>
 			<nav role="navigation">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
 					<?php if($userBtn=="logoutBtn"){ ?>
 						<li><a href="index.php?action=logout">Log Out</a></li>
 					<?php } ?>
