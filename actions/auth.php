@@ -16,7 +16,7 @@ $hash = $salt . $_POST['password'];
 for ($i = 0; $i < 100000; $i++) {
 	$hash = hash('sha256', $hash);
 }
-
+// resulted hash that generated after user typed data in
 $hash = $salt . $hash;
 
 // Check if student_number and password match with database data
