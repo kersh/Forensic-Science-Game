@@ -8,6 +8,7 @@ session_start();
 include('classes/db.class.php');
 
 try {
+
 	// Get DB data from file. For secure reason it's in separate file.
 	$dbFileName = "dbSecuredData.txt";
 	$dataFromFile = file($dbFileName, FILE_IGNORE_NEW_LINES);
