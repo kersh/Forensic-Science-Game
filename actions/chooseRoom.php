@@ -11,10 +11,12 @@ $room_user_data = array();
 // variables for each room
 $each_room_data = array();
 
-// retrieve all the data about rooms that are connected with current user.
+// retrieve all the data about rooms that are connected with current user
 $receivedRooms = mysql_query("SELECT * 
 							  FROM room_user 
 							  WHERE user_id=$_SESSION[student_number]");
+
+// add all data about room-user into 2D array
 $i = 0;
 while($row = mysql_fetch_array($receivedRooms)) {
 	$room_user_data[$i][0] = $row['room_user_id'];
@@ -25,6 +27,7 @@ while($row = mysql_fetch_array($receivedRooms)) {
 	$i++;
 }
 
+// add all data about each room
 for ($i=0; isset($room_user_data[$i][1]); $i++) {
 	$query = "SELECT * FROM rooms WHERE room_id='".$room_user_data[$i][1]."'";
 	$getRoom = mysql_query($query);

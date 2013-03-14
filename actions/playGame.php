@@ -5,6 +5,8 @@ if (!isset($_SESSION['student_number'])) {
 	header('Location: index.php?action=login&error=ok&userBtn=loginBtn');
 }
 
+$userBtn="logoutBtn";
+
 $room_name = $_GET['room'];
 
 ?>
