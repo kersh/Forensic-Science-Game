@@ -12,6 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<?php if(isset($room_name)): ?>
+	<!-- Here we include the glge JavaScript files. -->
+	<script type="text/javascript" src="GLGE/glge-compiled-min.js"></script>
+	<script type="text/javascript" src="3d-scenes/<?php echo $room_name; ?>/js/main.js"></script>
+	<?php endif; ?>
+
 </head>
 <body>
 	<div id="wrapper">

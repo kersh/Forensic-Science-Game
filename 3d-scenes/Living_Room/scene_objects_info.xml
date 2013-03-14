@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<glge>
+
+	<camera id="mainCamera" loc_y="18.7" loc_x="-8.2" loc_z="-17.8" rot_order="ROT_YXZ" xtype="C_ORTHO" rot_z="0" rot_x="0" rot_y="0" />
+	
+	<scene id="mainScene" camera="#mainCamera" ambient_color="#666">
+		<!-- <collada id="default" document="objects/default/test.dae" loc_x="0" loc_y="-1" loc_z="-30" rot_y="2.57" scale="0.05" /> -->
+		<!-- <collada id="ground" document="objects/default/ground.dae" loc_x="0" loc_y="-5" loc_z="-30" scale="1" /> -->
+
+		<collada id="test" document="objects/expTest4/test.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+
+		<light id="mainlight" loc_x="0" loc_y="25" loc_z="10" rot_x="-1.3"  attenuation_constant="0.3" type="L_POINT" />
+		<light id="mainlight" loc_x="20" loc_y="-15" loc_z="5" rot_x="1.3"  attenuation_constant="0.3" type="L_POINT" />
+	</scene>
+
+</glge>
