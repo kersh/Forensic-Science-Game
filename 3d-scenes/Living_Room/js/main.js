@@ -32,18 +32,31 @@ function startGLGE() {
 	keys = new GLGE.KeyInput();
 	
 	XMLdoc.onLoad = function(){
+		// document.getElementById("loading_status").innerHTML = "Loading...";
+
+
 		renderer = new GLGE.Renderer(canvasElement);
 		scene = new GLGE.Scene();
 		
 		scene = XMLdoc.getElement("mainScene");
 		renderer.setScene(scene);
 
-		// Set the timer.
-		setInterval(render,fps);
+		setTimeout(finishLoading, 1000);
 	}
 	
 	// Parse the GLGE xml file.
 	XMLdoc.load("3d-scenes/Living_Room/scene_objects_info.xml");
+}
+
+function finishLoading() {
+	// Set the timer.
+	setInterval(render,fps);
+
+	// Add an event to set if the mouse is over the canvas.
+
+	// Remove "Loading..." status.
+	// document.getElementById("loading_status").innerHTML = "";
+	document.getElementById("loading_status").style.display="none";
 }
 
 // The game timer (aka game loop). Called x times per second.

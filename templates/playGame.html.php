@@ -1,5 +1,8 @@
 <!-- <p>You are in a playGame mode. Your room is: <?php //echo str_replace("_", " ", $room_name); ?></p> -->
 
+<!-- Loading status div -->
+<div id="loading_status" style="position: relative; top: 10px; left: 10px; width: 920px;">Loading... (HTML)</div>
+
 <div id="myDivContainer" style="position: relative; width: 860px;">
 	<!-- Your 3D graphics are drawn in this canvas. -->
 	<canvas id="canvas" width="860" height="600"></canvas>
