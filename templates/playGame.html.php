@@ -1,4 +1,4 @@
-<p>You are in a playGame mode. Your room is: <?php echo str_replace("_", " ", $room_name); ?></p>
+<!-- <p>You are in a playGame mode. Your room is: <?php //echo str_replace("_", " ", $room_name); ?></p> -->
 
 <div id="myDivContainer" style="position: relative; width: 860px;">
 	<!-- Your 3D graphics are drawn in this canvas. -->

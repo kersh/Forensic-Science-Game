@@ -43,7 +43,7 @@ function startGLGE() {
 	}
 	
 	// Parse the GLGE xml file.
-	XMLdoc.load("scene_objects_info.xml");
+	XMLdoc.load("3d-scenes/Living_Room/scene_objects_info.xml");
 }
 
 // The game timer (aka game loop). Called x times per second.
@@ -73,13 +73,13 @@ function checkCameraMove(){
 	var cameraRotMat = camera.getRotMatrix();
 	
 	//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-	document.getElementById("debugInfo").innerHTML = "Debug info: <br>" +
-		"cameraPos = x: " + cameraPos.x + ", y: " + cameraPos.y + ", z: " + cameraPos.z + ".<br>" +
-		"cameraRotMat =<br>" +
-				" " + cameraRotMat[0] + " " + cameraRotMat[1] + " " + cameraRotMat[2] + " " + cameraRotMat[3] + ".<br>" +
-				" " + cameraRotMat[4] + " " + cameraRotMat[5] + " " + cameraRotMat[6] + " " + cameraRotMat[7] + ".<br>" +
-				" " + cameraRotMat[8] + " " + cameraRotMat[9] + " " + cameraRotMat[10] + " " + cameraRotMat[11] + ".<br>" +
-				" " + cameraRotMat[12] + " " + cameraRotMat[13] + " " + cameraRotMat[14] + " " + cameraRotMat[15] + ".<br>";
+	// document.getElementById("debugInfo").innerHTML = "Debug info: <br>" +
+	// 	"cameraPos = x: " + cameraPos.x + ", y: " + cameraPos.y + ", z: " + cameraPos.z + ".<br>" +
+	// 	"cameraRotMat =<br>" +
+	// 			" " + cameraRotMat[0] + " " + cameraRotMat[1] + " " + cameraRotMat[2] + " " + cameraRotMat[3] + ".<br>" +
+	// 			" " + cameraRotMat[4] + " " + cameraRotMat[5] + " " + cameraRotMat[6] + " " + cameraRotMat[7] + ".<br>" +
+	// 			" " + cameraRotMat[8] + " " + cameraRotMat[9] + " " + cameraRotMat[10] + " " + cameraRotMat[11] + ".<br>" +
+	// 			" " + cameraRotMat[12] + " " + cameraRotMat[13] + " " + cameraRotMat[14] + " " + cameraRotMat[15] + ".<br>";
 	//Debug information. END.
 	
 	// Look At..
@@ -185,9 +185,9 @@ function checkCameraMove(){
 		var origin = [cameraPos.x,cameraPos.y,cameraPos.z];
 		
 		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		document.getElementById("debugInfo2").innerHTML = 
-			"origin x = " + origin[0] + ", y = " + origin[1] + ", z = " + origin[2] + ".<br>" +
-			"xIncrease = " + xIncrease + ", yIncrease = " + yIncrease + ", zIncrease = " + zIncrease + ".<br>";
+		// document.getElementById("debugInfo2").innerHTML = 
+		// 	"origin x = " + origin[0] + ", y = " + origin[1] + ", z = " + origin[2] + ".<br>" +
+		// 	"xIncrease = " + xIncrease + ", yIncrease = " + yIncrease + ", zIncrease = " + zIncrease + ".<br>";
 		//Debug information. END.
 		
 		distRayX = scene.ray(origin,[-xIncrease,0,0]);
@@ -199,13 +199,13 @@ function checkCameraMove(){
 			if(distRayX.distance < 5) xIncrease = 0;
 			
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayX = " + distRayX.distance + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayX = " + distRayX.distance + ".<br>";
 			//Debug information. END.
 		} else {
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayX = NULL" + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayX = NULL" + ".<br>";
 			//Debug information. END.
 		}
 		// y.
@@ -213,13 +213,13 @@ function checkCameraMove(){
 			if(distRayY.distance < 5) yIncrease = 0;
 			
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayY = " + distRayY.distance + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayY = " + distRayY.distance + ".<br>";
 			//Debug information. END.
 		} else {
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayY = NULL" + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayY = NULL" + ".<br>";
 			//Debug information. END.
 		}
 		// z.
@@ -227,13 +227,13 @@ function checkCameraMove(){
 			if(distRayZ.distance < 5) zIncrease = 0;
 			
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayZ = " + distRayZ.distance + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayZ = " + distRayZ.distance + ".<br>";
 			//Debug information. END.
 		} else {
 			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-				"distRayZ = NULL" + ".<br>";
+			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
+			// 	"distRayZ = NULL" + ".<br>";
 			//Debug information. END.
 		}
 		
