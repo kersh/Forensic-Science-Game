@@ -6,13 +6,22 @@ var XMLdoc;
 var renderer;
 var scene;
 
+// *********************************** All Handles
+// Handles the mouse events.
+var mouse;
+var mouseOverCanvas;
+var mouseDown = false;
+var mouseUp = false;
+
 // Handles the keyboard events.
 var keys;
 
 // Handles games time.
 var lasttime=0;
 var now;
+// -----------------------------------
 
+// *********************************** Factors and FPS
 // Frames per secone.
 var fps = 16;
 
@@ -21,7 +30,12 @@ var cameraSpeed = 0.005;
 
 // Roatate factor.
 var rotateFactor = 0.0005;
+// -----------------------------------
 
+// *********************************** Open Collada models variables
+// Stores an open collada model.
+var aModel;
+// -----------------------------------
 
 // A funtion to start GLGE. Sets key variables.
 function startGLGE() {
@@ -30,18 +44,18 @@ function startGLGE() {
 	
 	// Set the keyboard.
 	keys = new GLGE.KeyInput();
+
+	// Set the mouse.
+	mouse = new GLGE.MouseInput(document.getElementById('canvas'));
 	
 	XMLdoc.onLoad = function(){
-		// document.getElementById("loading_status").innerHTML = "Loading...";
-
-
 		renderer = new GLGE.Renderer(canvasElement);
 		scene = new GLGE.Scene();
 		
 		scene = XMLdoc.getElement("mainScene");
 		renderer.setScene(scene);
 
-		setTimeout(finishLoading, 1000);
+		setTimeout(finishLoading, 2000);
 	}
 	
 	// Parse the GLGE xml file.
@@ -52,10 +66,13 @@ function finishLoading() {
 	// Set the timer.
 	setInterval(render,fps);
 
-	// Add an event to set if the mouse is over the canvas.
+	// Add an event to set if the mouse is over our canvs.
+	document.getElementById("canvas").onmouseover=function(e){ mouseOverCanvas = true; }
+	document.getElementById("canvas").onmousemove=function(e){ mouseovercanvas = true; }
+	document.getElementById("canvas").onmouseout=function(e){ mouseOverCanvas = false; }
+	document.getElementById("canvas").onmouseup=function(e){ mouseUp = true; }
 
 	// Remove "Loading..." status.
-	// document.getElementById("loading_status").innerHTML = "";
 	document.getElementById("loading_status").style.display="none";
 }
 
@@ -64,6 +81,15 @@ function render(){
 	// Work out the current time.
 	now = parseInt(new Date().getTime());
 	
+	// Check for mouse location.
+	if(mouseUp == true){
+		mouseUp = false;
+		whatClicked();
+	}
+
+	// Runs mouse control function.
+	mouselook();
+
 	// Checks for key events and moves the camera.
 	checkCameraMove();
 	
@@ -74,8 +100,81 @@ function render(){
 	lasttime = now;
 }
 
+// Finds what has been clicked in a scene.
+function whatClicked(){
+	if( mouseOverCanvas ){
+		var mousepos = mouse.getMousePosition();
+		
+		if( mousepos.x && mousepos.y ){
+			aRay = scene.pick( mousepos.x, mousepos.y );
+			if(aRay != null){
+				obj = aRay.object;
+				if( obj != null ){
+					
+					// Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
+					document.getElementById("debugInfo2").innerHTML = "Object found (obj.skeleton.id) = " + obj.skeleton.id + ".<br><br>";
+					//Debug information. END.
+
+					// Gets the model the mouse is currently over.
+					aModel = XMLdoc.getElement( obj.skeleton.id );
+				} else {
+					document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML + "NO ANI | MOUSE UP. ";
+				}
+			}
+		}
+	}
+}
+
+// Checks for mouse events and rotates the camera accordingly.
+function mouselook(){
+	if(mouseOverCanvas){
+		var mousepos = mouse.getMousePosition();
+		
+		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
+		// document.getElementById("debugInfo").innerHTML = "Debug info: <br>" + 
+		// 	"<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
+		//Debug information. END.
+		
+		mousepos.x = mousepos.x - document.getElementById("myDivContainer").offsetLeft;
+		mousepos.y = mousepos.y - document.getElementById("myDivContainer").offsetTop;
+		
+		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
+		// document.getElementById("debugInfo").innerHTML = document.getElementById("debugInfo").innerHTML +
+		// 	"<br>offsetLeft = " + document.getElementById("myDivContainer").offsetLeft + " | offsetTop = " + document.getElementById("myDivContainer").offsetTop + ".<br>" +
+		// 	"<br>With offset - mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br><br>";
+		//Debug information. END.
+		
+		// Get camera variables.
+		var camera = scene.camera;
+		var cameraRot = camera.getRotation();
+		
+		// Move the camera.
+		var width = document.getElementById('canvas').offsetWidth;
+		if(mousepos.x < width * 0.4){
+			var turn = Math.pow( (mousepos.x - width * 0.4) / (width * 0.4), 2 ) * 0.0008 * (now - lasttime);
+			//var turn = 0.005;
+			camera.setRotY(cameraRot.y + turn);
+		}
+		if(mousepos.x > width * 0.6){
+			var turn = Math.pow( (mousepos.x - width * 0.6) / (width * 0.4), 2 ) * 0.0008 * ( now - lasttime);
+			camera.setRotY(cameraRot.y - turn);
+		}
+		
+		var height = document.getElementById('canvas').offsetHeight;
+		if(mousepos.y < height * 0.4){
+			var turn = Math.pow( (mousepos.y - height * 0.4) / (height * 0.4), 2 ) * 0.0008 * (now - lasttime);
+			//var turn = 0.005;
+			camera.setRotX(cameraRot.x + turn);
+		}
+		if(mousepos.y > height * 0.6){
+			var turn = Math.pow( (mousepos.y - height * 0.6) / (height * 0.4), 2 ) * 0.0008 * ( now - lasttime);
+			camera.setRotX(cameraRot.x - turn);
+		}
+		
+	}
+}
+
 // Checks for key events and moves the camera.
-// This function requires the variables now and lasttime to be declared and updated in the render function.
 function checkCameraMove(){
 	// Get camera variables.
 	var camera = scene.camera;
@@ -84,17 +183,7 @@ function checkCameraMove(){
 	
 	// Gets the rotaion matrix of the camera. 
 	var cameraRotMat = camera.getRotMatrix();
-	
-	//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-	// document.getElementById("debugInfo").innerHTML = "Debug info: <br>" +
-	// 	"cameraPos = x: " + cameraPos.x + ", y: " + cameraPos.y + ", z: " + cameraPos.z + ".<br>" +
-	// 	"cameraRotMat =<br>" +
-	// 			" " + cameraRotMat[0] + " " + cameraRotMat[1] + " " + cameraRotMat[2] + " " + cameraRotMat[3] + ".<br>" +
-	// 			" " + cameraRotMat[4] + " " + cameraRotMat[5] + " " + cameraRotMat[6] + " " + cameraRotMat[7] + ".<br>" +
-	// 			" " + cameraRotMat[8] + " " + cameraRotMat[9] + " " + cameraRotMat[10] + " " + cameraRotMat[11] + ".<br>" +
-	// 			" " + cameraRotMat[12] + " " + cameraRotMat[13] + " " + cameraRotMat[14] + " " + cameraRotMat[15] + ".<br>";
-	//Debug information. END.
-	
+		
 	// Look At..
 	// ------------
 
@@ -113,7 +202,7 @@ function checkCameraMove(){
 	translationMat[0] = translationMat[0]  / translationMatMagnitude;
 	translationMat[1] = translationMat[1]  / translationMatMagnitude;
 	translationMat[2] = translationMat[2]  / translationMatMagnitude;
-	
+			
 	// Look At.. END.
 	// ------------
 	
@@ -169,96 +258,11 @@ function checkCameraMove(){
 		yIncrease = yIncrease - parseFloat( leftMat[1] );
 		zIncrease = zIncrease - parseFloat( leftMat[2] );
 	}
-	
-	// Look up.
-	if(keys.isKeyPressed(GLGE.KI_U)){
-		// Rotate the view. Radians.
-		camera.setRotX(cameraRot.x + (1 * rotateFactor * (now-lasttime)) );
-	}
-	// Look down.
-	if(keys.isKeyPressed(GLGE.KI_J)){
-		// Rotate the view. Radians.
-		camera.setRotX(cameraRot.x - (1 * rotateFactor * (now-lasttime)) );
-	}
-	// Rotate left
-	if(keys.isKeyPressed(GLGE.KI_H)){
-		// Rotate the view. Radians.
-		camera.setRotY(cameraRot.y + (1 * rotateFactor * (now-lasttime)) );
-	}
-	// Turn right.
-	if(keys.isKeyPressed(GLGE.KI_K)) {
-		// Rotate the view. Radians.
-		camera.setRotY(cameraRot.y - (1 * rotateFactor * (now-lasttime)) );
-	}
-	
-	// ************************************************
-	// Collision Detection.
-	if(xIncrease !=0 || yIncrease !=0 || zIncrease !=0 ){
-		// Collision Detection.
-		var origin = [cameraPos.x,cameraPos.y,cameraPos.z];
 		
-		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		// document.getElementById("debugInfo2").innerHTML = 
-		// 	"origin x = " + origin[0] + ", y = " + origin[1] + ", z = " + origin[2] + ".<br>" +
-		// 	"xIncrease = " + xIncrease + ", yIncrease = " + yIncrease + ", zIncrease = " + zIncrease + ".<br>";
-		//Debug information. END.
-		
-		distRayX = scene.ray(origin,[-xIncrease,0,0]);
-		distRayY = scene.ray(origin,[0,-yIncrease,0]);
-		distRayZ = scene.ray(origin,[0,0,-zIncrease]);
-		
-		// x.
-		if(distRayX != null){
-			if(distRayX.distance < 5) xIncrease = 0;
-			
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayX = " + distRayX.distance + ".<br>";
-			//Debug information. END.
-		} else {
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayX = NULL" + ".<br>";
-			//Debug information. END.
-		}
-		// y.
-		if(distRayY != null){
-			if(distRayY.distance < 5) yIncrease = 0;
-			
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayY = " + distRayY.distance + ".<br>";
-			//Debug information. END.
-		} else {
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayY = NULL" + ".<br>";
-			//Debug information. END.
-		}
-		// z.
-		if(distRayZ != null){
-			if(distRayZ.distance < 5) zIncrease = 0;
-			
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayZ = " + distRayZ.distance + ".<br>";
-			//Debug information. END.
-		} else {
-			//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-			// document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML +
-			// 	"distRayZ = NULL" + ".<br>";
-			//Debug information. END.
-		}
-		
-	}
-	// END:~ Collision Detection.
-	// ************************************************
-
 	// Move the camera.
 	if(xIncrease !=0 || yIncrease !=0 || zIncrease !=0 ){
 		camera.setLocX( cameraPos.x + (xIncrease * cameraSpeed * (now-lasttime)) );
 		camera.setLocY( cameraPos.y + (yIncrease * cameraSpeed * (now-lasttime)) );
 		camera.setLocZ( cameraPos.z + (zIncrease * cameraSpeed * (now-lasttime)) );
 	}
-
 }
