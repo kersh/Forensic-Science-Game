@@ -5,7 +5,7 @@
 
 <div id="myDivContainer" style="position: relative; width: 860px;">
 	<!-- Your 3D graphics are drawn in this canvas. -->
-	<canvas id="canvas" width="860" height="600"></canvas>
+	<!-- <canvas id="canvas" width="860" height="600"></canvas> -->
 </div> 
 
 <!-- Control info -->
@@ -19,5 +19,11 @@
 
 <!-- Object debug info -->
 <div id="debugInfo2" style="position: relative; top: 0px; left: 0; width: 480px; background: Teal; display:inline;">
+	<a href="#" id="buttonTest" >One test</a>
 	Test
+</div>
+
+<!-- Object debug info -->
+<div id="evidenceBag" style="position: relative; top: 40px; left: 0; width: 480px; background: Teal; display:inline;">
+	<p class="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
 </div>
