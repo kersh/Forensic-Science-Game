@@ -104,7 +104,7 @@ function render(){
 function whatClicked(){
 	if( mouseOverCanvas ){
 		var mousepos = mouse.getMousePosition();
-		
+
 		if( mousepos.x && mousepos.y ){
 			aRay = scene.pick( mousepos.x, mousepos.y );
 			if(aRay != null){
@@ -183,9 +183,6 @@ function checkCameraMove(){
 	
 	// Gets the rotaion matrix of the camera. 
 	var cameraRotMat = camera.getRotMatrix();
-		
-	// Look At..
-	// ------------
 
 	// Multiplies two mat4's (4 x 4 matrices). Returns {GLGE.Mat} the matrix multiplication of the matrices.
 	// [0,0,-1,1] = the default postion we are looking at. GlGE is right handed system. If the camera is at 0,0,0 its default
@@ -202,12 +199,6 @@ function checkCameraMove(){
 	translationMat[0] = translationMat[0]  / translationMatMagnitude;
 	translationMat[1] = translationMat[1]  / translationMatMagnitude;
 	translationMat[2] = translationMat[2]  / translationMatMagnitude;
-			
-	// Look At.. END.
-	// ------------
-	
-	// Left..
-	// ------------
 	
 	// Multiplies two mat4's (4 x 4 matrices). Returns {GLGE.Mat} the matrix multiplication of the matrices.
 	// [-1,0,0,1] = the left postion to the direction we are looking. GlGE is right handed system. If the camera is at 0,0,0 its default
@@ -258,6 +249,32 @@ function checkCameraMove(){
 		yIncrease = yIncrease - parseFloat( leftMat[1] );
 		zIncrease = zIncrease - parseFloat( leftMat[2] );
 	}
+
+	// Collision Detection ************************************************
+	if(xIncrease !=0 || yIncrease !=0 || zIncrease !=0 ){
+		// Collision Detection.
+		var origin = [cameraPos.x,cameraPos.y,cameraPos.z];
+
+		distRayX = scene.ray(origin,[-xIncrease,0,0]);
+		distRayY = scene.ray(origin,[0,-yIncrease,0]);
+		distRayZ = scene.ray(origin,[0,0,-zIncrease]);
+
+		// x
+		if( distRayX != null ){
+		  if( distRayX.distance < 5 ) xIncrease = 0;
+		}
+
+		// y
+		if( distRayY != null ){
+			if( distRayY.distance < 5 ) yIncrease = 0;
+		}
+
+		// z
+		if( distRayZ != null ){
+			if( distRayZ.distance < 5 ) zIncrease = 0;
+		}
+	}
+	// END: Collision Detection ************************************************
 		
 	// Move the camera.
 	if(xIncrease !=0 || yIncrease !=0 || zIncrease !=0 ){
