@@ -1,0 +1,106 @@
+.clearAll {
+	clear: both;
+}
+
+/*****************************************************/
+/* ROOM ITEM */
+/*****************************************************/
+#rooms_wrapper {
+	/*background: #ddd;*/
+	overflow: hidden;
+}
+
+.room_item {
+	background: #ccc;
+	margin: 0 0 20px 0;
+}
+
+	.room_item .room_img, .room_item .room_img img {
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+
+	.room_item .room_content {
+		float: left;
+		width: 500px;
+		margin: 0 0 0 10px;
+	}
+
+		.room_item .room_content h4 {
+			font-size: 1.4em;
+			line-height: 1em;
+			padding: 0;
+			margin: 5px 0;
+		}
+
+		.room_item .room_content p {
+			padding: 0;
+			margin: 10px 0;
+		}
+			.room_item .room_content span {
+				font-weight: bold;
+				color: #333;
+			}
+
+		.room_item .room_content .desc {
+			font-size: 0.8em;
+		}
+/*---------------------------------------------------*/
+/* ROOM ITEM END */
+/*---------------------------------------------------*/
+
+
+/*****************************************************/
+/* CANVAS & GAME BAG ITEM */
+/*****************************************************/
+#loading_status {
+	position: absolute;
+	margin: 280px 340px;
+	font-size: 3em;
+	color: #999;
+}
+
+#myDivContainer {
+	width: 860px;
+	border: 1px solid #aaa;
+}
+
+#evidenceBag {
+	top: 40px;
+	left: 0;
+}
+
+#evidenceBag ul#evidences {
+	list-style-type: none;
+	background: #ddd;
+}
+	#evidenceBag ul#evidences li {
+		background: #ccc;
+		float: left;
+		margin: 10px 0 10px 10px;
+	}
+		#evidenceBag ul#evidences li h5, #evidenceBag ul#evidences li p.objectPrice {
+			padding: 0;
+			margin: 2px 0;
+			text-align: center;
+		}
+		#evidenceBag ul#evidences li p.objectPrice {
+			font-size: 0.8em;
+		}
+		#evidenceBag ul#evidences li div.removeBtn {
+			font-size: 0.8em;
+			background: #FF4B41;
+			text-align: center;
+			padding: 5px 0;
+			margin-bottom: -25px;
+			z-index: 1;
+			width: 100px;
+			position: absolute;
+		}
+		#evidenceBag ul#evidences li img {
+			z-index: 0;
+		}
+/*---------------------------------------------------*/
+/* ROOM ITEM END */
+/*---------------------------------------------------*/

@@ -3,6 +3,5 @@
 			<p>University of Wolverhampton | All Rights Reserved | 2013</p>
 		</div>
 	</div> <!-- end of #wrapper -->
-
 </body>
 </html>
