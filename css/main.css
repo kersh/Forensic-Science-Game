@@ -71,10 +71,17 @@
 	left: 0;
 }
 
+#evidenceBagNotice {
+	text-align: center;
+	margin-top: 75px;
+	color: #aaa;
+}
+
 #evidenceBag ul#evidences {
 	list-style-type: none;
 	background: #ddd;
 	overflow: hidden;
+	height: 160px;
 }
 	#evidenceBag ul#evidences li {
 		background: #ccc;
@@ -98,6 +105,7 @@
 			z-index: 1;
 			width: 100px;
 			position: absolute;
+			cursor: pointer;
 		}
 		#evidenceBag ul#evidences li img {
 			z-index: 0;

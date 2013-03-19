@@ -4,18 +4,6 @@
 <div id="evidenceBag">
 	<ul id="evidences">
 		<p id="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
-		<li>
-			<div class="removeBtn">remove</div>
-			<img src="images/object_previews/test.jpg" alt ="test" />
-			<h5>Test</h5>
-			<p class="objectPrice">£50</p>
-		</li>
-		<li>
-			<div class="removeBtn">remove</div>
-			<img src="images/object_previews/test.jpg" alt ="test" />
-			<h5>Test</h5>
-			<p class="objectPrice">£120</p>
-		</li>
 	</ul>
 	<div class="clearAll"></div>
 </div>

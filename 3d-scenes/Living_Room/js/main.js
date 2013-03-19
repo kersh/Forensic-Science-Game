@@ -112,7 +112,7 @@ function whatClicked(){
 				if( obj != null ){
 					
 					// Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-					document.getElementById("debugInfo2").innerHTML = "Object found (obj.skeleton.id) = " + obj.skeleton.id + ".<br><br>";
+					// document.getElementById("debugInfo2").innerHTML = "Object found (obj.skeleton.id) = " + obj.skeleton.id + ".<br><br>";
 					//Debug information. END.
 
 					jQuery(function(){
@@ -120,7 +120,7 @@ function whatClicked(){
 					});
 
 					// Gets the model the mouse is currently over.
-					aModel = XMLdoc.getElement( obj.skeleton.id );
+					// aModel = XMLdoc.getElement( obj.skeleton.id );
 				} else {
 					document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML + "NO ANI | MOUSE UP. ";
 				}

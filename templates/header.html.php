@@ -28,15 +28,22 @@
 					cache: false,
 					success: function(result) {
 						object_data = result;
-						// alert(object_data[0]);
-						// console.log(object_data[1]);
-						// jQuery("#evidences").append('<li>YRGDS</li>');
-						$("ul#evidences").append('<li><div class="removeBtn">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£'+ object_data[3] +'</p></li>');
+						$('#evidenceBagNotice').hide();
+						$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="removeBtn" onClick="removeObject('+object_data[0]+')">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£'+ object_data[3] +'</p></li>');
+						$('#itemLi'+object_data[0]).slideDown();
 					},
 				});
 			}
 			window.getObject=getObject;
 		});
+		function removeObject(id){
+			$('#itemLi'+id).slideUp('fast', function(){
+				$(this).remove();
+			});
+			if ($('ul#evidences li').length == 0) {
+				$('#evidenceBagNotice').show();
+			}
+		}
 	</script>
 	<!-- Here we include the glge JavaScript files. -->
 	<script type="text/javascript" src="GLGE/glge-compiled-min.js"></script>
