@@ -39,10 +39,12 @@
 		function removeObject(id){
 			$('#itemLi'+id).slideUp('fast', function(){
 				$(this).remove();
+				// show message if evidence bag is empty
+				if ($('ul#evidences li').length == 0) {
+					console.log("inside length if");
+					$('#evidenceBagNotice').show();
+				}
 			});
-			if ($('ul#evidences li').length == 0) {
-				$('#evidenceBagNotice').show();
-			}
 		}
 	</script>
 	<!-- Here we include the glge JavaScript files. -->
