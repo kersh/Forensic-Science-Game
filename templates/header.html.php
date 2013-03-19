@@ -13,6 +13,45 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<?php if(isset($room_name)): ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		// $(document).ready( function() {
+		// 	var object_data = new Array();
+		// 	$('#buttonTest').click( function(){
+		// 		$.ajax({
+		// 			type: 'GET',
+		// 			url: 'actions/getObject.php',
+		// 			data: 'object_id=1',
+		// 			dataType: 'json',
+		// 			cache: false,
+		// 			success: function(result) {
+		// 				object_data = result;
+		// 				alert(object_data[0]);
+		// 			},
+		// 		});
+		// 	});
+		// });
+
+		jQuery(function() {
+			function getObject() {
+				var object_data = new Array();
+				$.ajax({
+					type: 'GET',
+					url: 'actions/getObject.php',
+					data: 'object_id=1',
+					dataType: 'json',
+					cache: false,
+					success: function(result) {
+						object_data = result;
+						alert(object_data[0]);
+						console.log(object_data[1]);
+					},
+				});
+			}
+			window.getObject=getObject;
+		});
+	</script>
 	<!-- Here we include the glge JavaScript files. -->
 	<script type="text/javascript" src="GLGE/glge-compiled-min.js"></script>
 	<script type="text/javascript" src="3d-scenes/<?php echo $room_name; ?>/js/main.js"></script>

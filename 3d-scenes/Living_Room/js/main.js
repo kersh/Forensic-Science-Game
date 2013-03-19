@@ -115,6 +115,10 @@ function whatClicked(){
 					document.getElementById("debugInfo2").innerHTML = "Object found (obj.skeleton.id) = " + obj.skeleton.id + ".<br><br>";
 					//Debug information. END.
 
+					jQuery(function(){
+						getObject();
+					});
+
 					// Gets the model the mouse is currently over.
 					aModel = XMLdoc.getElement( obj.skeleton.id );
 				} else {
