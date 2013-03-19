@@ -17,23 +17,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
 	<script type="text/javascript">
-		// $(document).ready( function() {
-		// 	var object_data = new Array();
-		// 	$('#buttonTest').click( function(){
-		// 		$.ajax({
-		// 			type: 'GET',
-		// 			url: 'actions/getObject.php',
-		// 			data: 'object_id=1',
-		// 			dataType: 'json',
-		// 			cache: false,
-		// 			success: function(result) {
-		// 				object_data = result;
-		// 				alert(object_data[0]);
-		// 			},
-		// 		});
-		// 	});
-		// });
-
 		jQuery(function() {
 			function getObject() {
 				var object_data = new Array();
@@ -45,8 +28,10 @@
 					cache: false,
 					success: function(result) {
 						object_data = result;
-						alert(object_data[0]);
-						console.log(object_data[1]);
+						// alert(object_data[0]);
+						// console.log(object_data[1]);
+						// jQuery("#evidences").append('<li>YRGDS</li>');
+						$("ul#evidences").append('<li><div class="removeBtn">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£'+ object_data[3] +'</p></li>');
 					},
 				});
 			}

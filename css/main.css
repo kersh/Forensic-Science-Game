@@ -74,6 +74,7 @@
 #evidenceBag ul#evidences {
 	list-style-type: none;
 	background: #ddd;
+	overflow: hidden;
 }
 	#evidenceBag ul#evidences li {
 		background: #ccc;

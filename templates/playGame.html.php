@@ -3,7 +3,7 @@
 <!-- Here user will add evidences found inside 3D scene -->
 <div id="evidenceBag">
 	<ul id="evidences">
-		<!-- <p class="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p> -->
+		<p id="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
 		<li>
 			<div class="removeBtn">remove</div>
 			<img src="images/object_previews/test.jpg" alt ="test" />
@@ -16,8 +16,8 @@
 			<h5>Test</h5>
 			<p class="objectPrice">£120</p>
 		</li>
-		<div class="clearAll"></div>
 	</ul>
+	<div class="clearAll"></div>
 </div>
 <div class="clearAll"></div>
 
