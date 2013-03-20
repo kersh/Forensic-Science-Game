@@ -62,8 +62,14 @@
 }
 
 #myDivContainer {
+	position: relative;
 	width: 860px;
+	height: 600px;
 	border: 1px solid #aaa;
+}
+
+#canvas {
+	position: relative;
 }
 
 #evidenceBag {

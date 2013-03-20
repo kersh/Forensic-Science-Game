@@ -9,6 +9,10 @@
 </div>
 <div class="clearAll"></div>
 
+<!-- Camera debug info --> 
+<div id="debugInfo" style="position: fixed; top: 0px; left: 100px; width: 300px; background: Olive; display:inline;"></div>
+<div id="debugInfo2" style="position: fixed; top: 0px; left: 400px; width: 300px; background: Olive; display:inline;"></div>
+
 <div id="myDivContainer">
 	<!-- Loading status div -->
 	<div id="loading_status">Loading...</div>
@@ -23,8 +27,6 @@
 
 </div>
 
-<!-- Camera debug info --> 
-<div id="debugInfo" style="position: relative; top: 90px; left: 911px; width: 480px; background: Olive; display:inline;"></div>
 
 <!-- Object debug info -->
-<div id="debugInfo2" style="position: relative; top: 0px; left: 0; width: 480px; background: Teal; display:inline;"></div>
+<!-- <div id="debugInfo2" style="position: relative; top: 0px; left: 0; width: 480px; background: Teal; display:inline;"></div> -->

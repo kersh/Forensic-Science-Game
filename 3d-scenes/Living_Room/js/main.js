@@ -134,14 +134,24 @@ function mouselook(){
 	if(mouseOverCanvas){
 		var mousepos = mouse.getMousePosition();
 		
+		var scrollTop = $(window).scrollTop();
+		var elementOffset = $('#myDivContainer').offset().top;
+		var topOffset = elementOffset - scrollTop;
+ 		// var testval = $(window).height() - ($('#myDivContainer').offset().top + $('#myDivContainer').height());
+
 		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		// document.getElementById("debugInfo").innerHTML = "Debug info: <br>" + 
-		// 	"<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
+		// document.getElementById("debugInfo").innerHTML = "Debug info raw position: <br>" + 
+			// "<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
 		//Debug information. END.
 		
 		mousepos.x = mousepos.x - document.getElementById("myDivContainer").offsetLeft;
-		mousepos.y = mousepos.y - document.getElementById("myDivContainer").offsetTop;
-		
+		mousepos.y = mousepos.y - topOffset;
+
+		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
+		// document.getElementById("debugInfo2").innerHTML = "Debug info after offset: <br>" + 
+			// "<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
+		//Debug information. END.
+
 		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
 		// document.getElementById("debugInfo").innerHTML = document.getElementById("debugInfo").innerHTML +
 		// 	"<br>offsetLeft = " + document.getElementById("myDivContainer").offsetLeft + " | offsetTop = " + document.getElementById("myDivContainer").offsetTop + ".<br>" +
