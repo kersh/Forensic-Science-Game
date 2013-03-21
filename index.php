@@ -8,21 +8,7 @@ session_start();
 include('classes/db.class.php');
 
 try {
-	// Get DB data from file. For secure reason it's in separate file.
-	$dbFileName = "dbSecuredData.txt";
-	$dataFromFile = file($dbFileName, FILE_IGNORE_NEW_LINES);
-
-	// check file and find DB data.
-	foreach ($dataFromFile as $key => &$value) {
-		$arr = explode("\t", $value);
-	}
-	$dbHost = $arr[0];
-	$dbUser = $arr[1];
-	$dbPassword = $arr[2];
-	$dbDb = $arr[3];
-
-	// Create DB connection
-	$db = new db($dbHost, $dbUser, $dbPassword, $dbDb);
+	$db = db::Instance();
 
 	// default action authorization
 	$action = !isset($_GET['action']) ? 'login' : $_GET['action'];
@@ -52,10 +38,14 @@ try {
 	$action = 'error';
 	var_dump($e->getMessage());
 }
+$action = !isset($_GET['action']) ? 'login' : $_GET['action'];
 
-// Render templates
-include("templates/header.html.php");
-include(sprintf("templates/%s.html.php", $action));
-include("templates/footer.html.php");
+if($action != 'getObject') {
+	// Render templates
+	include("templates/header.html.php");
+	include(sprintf("templates/%s.html.php", $action));
+	include("templates/footer.html.php");	
+}
+
 
 ?>

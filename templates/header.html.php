@@ -21,8 +21,8 @@
 			function getObject() {
 				var object_data = new Array();
 				$.ajax({
-					type: 'GET',
-					url: 'actions/getObject.php',
+					type: 'POST',
+					url: 'index.php?action=getObject&object_id=1',
 					data: 'object_id=1',
 					dataType: 'json',
 					cache: false,
