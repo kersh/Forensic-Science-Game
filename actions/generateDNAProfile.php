@@ -55,6 +55,9 @@ try {
 	$dnaProfile->getAlleleFGA();
 	echo "<br/>";
 
+	$dnaProfile->countCaucasian();
+	echo "<br/>";
+
 } catch(Exception $e) {
 	// Found some error
 	var_dump($e->getMessage());
