@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<locuses>
-	<locus_D3>
+<locus>
+	<locus_0> <!-- locus_D3 -->
 		<allele_11>
 			<race_caucasian>0.0012</race_caucasian>
 			<race_afrocarib>0.0028</race_afrocarib>
@@ -52,16 +52,699 @@
 		</allele_19>
 		<allele_20>
 			<race_caucasian>0.0012</race_caucasian>
-			<race_afrocarib>0</race_afrocarib>
-			<race_asian>0</race_asian>
+			<race_afrocarib>0.001</race_afrocarib>
+			<race_asian>0.001</race_asian>
 		</allele_20>
-	</locus_D3>
+	</locus_0> <!-- locus_D3 -->
 
-	<locus_vWA>
-		<allele>
+	<locus_1> <!-- locus_vWA -->
+		<allele_11>
 			<race_caucasian>0.0010</race_caucasian>
 			<race_afrocarib>0.0028</race_afrocarib>
 			<race_asian>0.0010</race_asian>
-		</allele>
-	</locus_vWA>
-</locuses>
+		</allele_11>
+		<allele_12>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0056</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_12>
+
+		<allele_13>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_13>
+		<allele_14>
+			<race_caucasian>0.0926</race_caucasian>
+			<race_afrocarib>0.0503</race_afrocarib>
+			<race_asian>0.1570</race_asian>
+		</allele_14>
+
+		<allele_15>
+			<race_caucasian>0.1196</race_caucasian>
+			<race_afrocarib>0.2318</race_afrocarib>
+			<race_asian>0.1033</race_asian>
+		</allele_15>
+		<allele_16>
+			<race_caucasian>0.2222</race_caucasian>
+			<race_afrocarib>0.2961</race_afrocarib>
+			<race_asian>0.2686</race_asian>
+		</allele_16>
+
+		<allele_17>
+			<race_caucasian>0.2618</race_caucasian>
+			<race_afrocarib>0.1899</race_afrocarib>
+			<race_asian>0.2397</race_asian>
+		</allele_17>
+		<allele_18>
+			<race_caucasian>0.2014</race_caucasian>
+			<race_afrocarib>0.1117</race_afrocarib>
+			<race_asian>0.1612</race_asian>
+		</allele_18>
+
+		<allele_19>
+			<race_caucasian>0.0833</race_caucasian>
+			<race_afrocarib>0.0754</race_afrocarib>
+			<race_asian>0.0579</race_asian>
+		</allele_19>
+		<allele_20>
+			<race_caucasian>0.0185</race_caucasian>
+			<race_afrocarib>0.0196</race_afrocarib>
+			<race_asian>0.0124</race_asian>
+		</allele_20>
+
+		<allele_21>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_21>
+	</locus_1> <!-- locus_vWA -->
+
+	<locus_2> <!-- locus_D16 -->
+		<allele_8>
+			<race_caucasian>0.0104</race_caucasian>
+			<race_afrocarib>0.0363</race_afrocarib>
+			<race_asian>0.0455</race_asian>
+		</allele_8>
+		<allele_9>
+			<race_caucasian>0.1354</race_caucasian>
+			<race_afrocarib>0.2263</race_afrocarib>
+			<race_asian>0.1157</race_asian>
+		</allele_9>
+
+		<allele_10>
+			<race_caucasian>0.0590</race_caucasian>
+			<race_afrocarib>0.1145</race_afrocarib>
+			<race_asian>0.1074</race_asian>
+		</allele_10>
+		<allele_11>
+			<race_caucasian>0.2778</race_caucasian>
+			<race_afrocarib>0.2821</race_afrocarib>
+			<race_asian>0.3058</race_asian>
+		</allele_11>
+
+		<allele_12>
+			<race_caucasian>0.3056</race_caucasian>
+			<race_afrocarib>0.1872</race_afrocarib>
+			<race_asian>0.2851</race_asian>
+		</allele_12>
+		<allele_13>
+			<race_caucasian>0.1759</race_caucasian>
+			<race_afrocarib>0.1369</race_afrocarib>
+			<race_asian>0.1157</race_asian>
+		</allele_13>
+
+		<allele_14>
+			<race_caucasian>0.0347</race_caucasian>
+			<race_afrocarib>0.0141</race_afrocarib>
+			<race_asian>0.0248</race_asian>
+		</allele_14>
+		<allele_15>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.001</race_asian>
+		</allele_15>
+	</locus_2> <!-- locus_D16 -->
+
+	<locus_3> <!-- locus_D2 -->
+		<allele_14>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_14>
+		<allele_16>
+			<race_caucasian>0.0382</race_caucasian>
+			<race_afrocarib>0.0559</race_afrocarib>
+			<race_asian>0.0124</race_asian>
+		</allele_16>
+
+		<allele_17>
+			<race_caucasian>0.2164</race_caucasian>
+			<race_afrocarib>0.0782</race_afrocarib>
+			<race_asian>0.0826</race_asian>
+		</allele_17>
+		<allele_18>
+			<race_caucasian>0.0694</race_caucasian>
+			<race_afrocarib>0.0475</race_afrocarib>
+			<race_asian>0.1660</race_asian>
+		</allele_18>
+
+		<allele_19>
+			<race_caucasian>0.1196</race_caucasian>
+			<race_afrocarib>0.1592</race_afrocarib>
+			<race_asian>0.1694</race_asian>
+		</allele_19>
+		<allele_20>
+			<race_caucasian>0.1667</race_caucasian>
+			<race_afrocarib>0.0754</race_afrocarib>
+			<race_asian>0.0992</race_asian>
+		</allele_20>
+
+		<allele_21>
+			<race_caucasian>0.0370</race_caucasian>
+			<race_afrocarib>0.1620</race_afrocarib>
+			<race_asian>0.0289</race_asian>
+		</allele_21>
+		<allele_22>
+			<race_caucasian>0.0165</race_caucasian>
+			<race_afrocarib>0.1704</race_afrocarib>
+			<race_asian>0.0744</race_asian>
+		</allele_22>
+
+		<allele_23>
+			<race_caucasian>0.0972</race_caucasian>
+			<race_afrocarib>0.1034</race_afrocarib>
+			<race_asian>0.1901</race_asian>
+		</allele_23>
+		<allele_24>
+			<race_caucasian>0.1181</race_caucasian>
+			<race_afrocarib>0.0838</race_afrocarib>
+			<race_asian>0.0702</race_asian>
+		</allele_24>
+
+		<allele_25>
+			<race_caucasian>0.1030</race_caucasian>
+			<race_afrocarib>0.0447</race_afrocarib>
+			<race_asian>0.0620</race_asian>
+		</allele_25>
+		<allele_26>
+			<race_caucasian>0.0127</race_caucasian>
+			<race_afrocarib>0.0140</race_afrocarib>
+			<race_asian>0.0207</race_asian>
+		</allele_26>
+
+		<allele_27>
+			<race_caucasian>0.0048</race_caucasian>
+			<race_afrocarib>0.0056</race_afrocarib>
+			<race_asian>0.0045</race_asian>
+		</allele_27>
+	</locus_3> <!-- locus_D2 -->
+
+	<locus_4> <!-- locus_D8 -->
+		<allele_8>
+			<race_caucasian>0.0197</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_8>
+		<allele_9>
+			<race_caucasian>0.0127</race_caucasian>
+			<race_afrocarib>0.0112</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_9>
+
+		<allele_10>
+			<race_caucasian>0.1030</race_caucasian>
+			<race_afrocarib>0.0841</race_afrocarib>
+			<race_asian>0.1694</race_asian>
+		</allele_10>
+		<allele_11>
+			<race_caucasian>0.0868</race_caucasian>
+			<race_afrocarib>0.0223</race_afrocarib>
+			<race_asian>0.0537</race_asian>
+		</allele_11>
+
+		<allele_12>
+			<race_caucasian>0.1366</race_caucasian>
+			<race_afrocarib>0.1229</race_afrocarib>
+			<race_asian>0.0866</race_asian>
+		</allele_12>
+		<allele_13>
+			<race_caucasian>0.3218</race_caucasian>
+			<race_afrocarib>0.2123</race_afrocarib>
+			<race_asian>0.1777</race_asian>
+		</allele_13>
+
+		<allele_14>
+			<race_caucasian>0.1956</race_caucasian>
+			<race_afrocarib>0.3352</race_afrocarib>
+			<race_asian>0.2190</race_asian>
+		</allele_14>
+		<allele_15>
+			<race_caucasian>0.0938</race_caucasian>
+			<race_afrocarib>0.2123</race_afrocarib>
+			<race_asian>0.1942</race_asian>
+		</allele_15>
+
+		<allele_16>
+			<race_caucasian>0.0266</race_caucasian>
+			<race_afrocarib>0.0587</race_afrocarib>
+			<race_asian>0.0744</race_asian>
+		</allele_16>
+		<allele_17>
+			<race_caucasian>0.0035</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_17>
+
+		<allele_18>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0124</race_asian>
+		</allele_18>
+		<allele_19>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0056</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_19>
+	</locus_4> <!-- locus_D8 -->
+
+	<locus_5> <!-- locus_D21 -->
+		<allele_23.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_23.2>
+		<allele_24>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_24>
+
+		<allele_26.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_26.2>
+		<allele_27>
+			<race_caucasian>0.0243</race_caucasian>
+			<race_afrocarib>0.0531</race_afrocarib>
+			<race_asian>0.0167</race_asian>
+		</allele_27>
+
+		<allele_28>
+			<race_caucasian>0.1609</race_caucasian>
+			<race_afrocarib>0.2877</race_afrocarib>
+			<race_asian>0.1083</race_asian>
+		</allele_28>
+		<allele_29>
+			<race_caucasian>0.2060</race_caucasian>
+			<race_afrocarib>0.1983</race_afrocarib>
+			<race_asian>0.2250</race_asian>
+		</allele_29>
+
+		<allele_29.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_29.2>
+		<allele_30>
+			<race_caucasian>0.2708</race_caucasian>
+			<race_afrocarib>0.1538</race_afrocarib>
+			<race_asian>0.2167</race_asian>
+		</allele_30>
+
+		<allele_30.2>
+			<race_caucasian>0.0313</race_caucasian>
+			<race_afrocarib>0.0251</race_afrocarib>
+			<race_asian>0.0375</race_asian>
+		</allele_30.2>
+		<allele_31>
+			<race_caucasian>0.0556</race_caucasian>
+			<race_afrocarib>0.0615</race_afrocarib>
+			<race_asian>0.0292</race_asian>
+		</allele_31>
+
+		<allele_31.2>
+			<race_caucasian>0.1042</race_caucasian>
+			<race_afrocarib>0.0391</race_afrocarib>
+			<race_asian>0.0875</race_asian>
+		</allele_31.2>
+		<allele_32>
+			<race_caucasian>0.0162</race_caucasian>
+			<race_afrocarib>0.0140</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_32>
+
+		<allele_32.2>
+			<race_caucasian>0.0880</race_caucasian>
+			<race_afrocarib>0.0559</race_afrocarib>
+			<race_asian>0.2042</race_asian>
+		</allele_32.2>
+		<allele_33>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0140</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_33>
+
+		<allele_33.2>
+			<race_caucasian>0.0336</race_caucasian>
+			<race_afrocarib>0.0140</race_afrocarib>
+			<race_asian>0.0542</race_asian>
+		</allele_33.2>
+		<allele_34.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0112</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_34.2>
+
+		<allele_35>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0587</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_35>
+		<allele_36>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0112</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_36>
+	</locus_5> <!-- locus_D21 -->
+
+	<locus_6> <!-- locus_D18 -->
+		<allele_10>
+			<race_caucasian>0.0104</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0126</race_asian>
+		</allele_10>
+		<allele_10.2>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.00056</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_10.2>
+
+		<allele_11>
+			<race_caucasian>0.0116</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0252</race_asian>
+		</allele_11>
+		<allele_12>
+			<race_caucasian>0.1435</race_caucasian>
+			<race_afrocarib>0.0531</race_afrocarib>
+			<race_asian>0.0798</race_asian>
+		</allele_12>
+
+		<allele_13>
+			<race_caucasian>0.1285</race_caucasian>
+			<race_afrocarib>0.0279</race_afrocarib>
+			<race_asian>0.1303</race_asian>
+		</allele_13>
+		<allele_14>
+			<race_caucasian>0.1586</race_caucasian>
+			<race_afrocarib>0.0475</race_afrocarib>
+			<race_asian>0.2269</race_asian>
+		</allele_14>
+
+		<allele_15>
+			<race_caucasian>0.1424</race_caucasian>
+			<race_afrocarib>0.1508</race_afrocarib>
+			<race_asian>0.1639</race_asian>
+		</allele_15>
+		<allele_16>
+			<race_caucasian>0.1343</race_caucasian>
+			<race_afrocarib>0.1858</race_afrocarib>
+			<race_asian>0.1261</race_asian>
+		</allele_16>
+
+		<allele_17>
+			<race_caucasian>0.1181</race_caucasian>
+			<race_afrocarib>0.1780</race_afrocarib>
+			<race_asian>0.1050</race_asian>
+		</allele_17>
+		<allele_18>
+			<race_caucasian>0.0787</race_caucasian>
+			<race_afrocarib>0.1397</race_afrocarib>
+			<race_asian>0.0294</race_asian>
+		</allele_18>
+
+		<allele_19>
+			<race_caucasian>0.0475</race_caucasian>
+			<race_afrocarib>0.1089</race_afrocarib>
+			<race_asian>0.0588</race_asian>
+		</allele_19>
+		<allele_20>
+			<race_caucasian>0.0116</race_caucasian>
+			<race_afrocarib>0.0531</race_afrocarib>
+			<race_asian>0.0294</race_asian>
+		</allele_20>
+
+		<allele_21>
+			<race_caucasian>0.0116</race_caucasian>
+			<race_afrocarib>0.0307</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_21>
+		<allele_22>
+			<race_caucasian>0.0035</race_caucasian>
+			<race_afrocarib>0.0112</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_22>
+
+		<allele_23>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0042</race_asian>
+		</allele_23>
+	</locus_6> <!-- locus_D18 -->
+
+	<locus_7> <!-- locus_D19 -->
+		<allele_10>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0140</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_10>
+		<allele_11>
+			<race_caucasian>0.0093</race_caucasian>
+			<race_afrocarib>0.0754</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_11>
+
+		<allele_12>
+			<race_caucasian>0.0718</race_caucasian>
+			<race_afrocarib>0.1369</race_afrocarib>
+			<race_asian>0.0744</race_asian>
+		</allele_12>
+		<allele_12.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0503</race_afrocarib>
+			<race_asian>0.0248</race_asian>
+		</allele_12.2>
+
+		<allele_13>
+			<race_caucasian>0.2535</race_caucasian>
+			<race_afrocarib>0.3184</race_afrocarib>
+			<race_asian>0.2727</race_asian>
+		</allele_13>
+		<allele_13.2>
+			<race_caucasian>0.0174</race_caucasian>
+			<race_afrocarib>0.0279</race_afrocarib>
+			<race_asian>0.0248</race_asian>
+		</allele_13.2>
+
+		<allele_14>
+			<race_caucasian>0.3333</race_caucasian>
+			<race_afrocarib>0.1732</race_afrocarib>
+			<race_asian>0.1901</race_asian>
+		</allele_14>
+		<allele_14.2>
+			<race_caucasian>0.0255</race_caucasian>
+			<race_afrocarib>0.0447</race_afrocarib>
+			<race_asian>0.0537</race_asian>
+		</allele_14.2>
+
+		<allele_15>
+			<race_caucasian>0.1794</race_caucasian>
+			<race_afrocarib>0.0615</race_afrocarib>
+			<race_asian>0.1612</race_asian>
+		</allele_15>
+		<allele_15.2>
+			<race_caucasian>0.0347</race_caucasian>
+			<race_afrocarib>0.0587</race_afrocarib>
+			<race_asian>0.0826</race_asian>
+		</allele_15.2>
+
+		<allele_16>
+			<race_caucasian>0.0486</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0537</race_asian>
+		</allele_16>
+		<allele_16.2>
+			<race_caucasian>0.0162</race_caucasian>
+			<race_afrocarib>0.0335</race_afrocarib>
+			<race_asian>0.0289</race_asian>
+		</allele_16.2>
+
+		<allele_17>
+			<race_caucasian>0.0035</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0165</race_asian>
+		</allele_17>
+		<allele_17.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_17.2>
+
+		<allele_18>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_18>
+		<allele_18.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_18.2>
+	</locus_7> <!-- locus_D19 -->
+
+	<locus_8> <!-- locus_THO1 -->
+		<allele_5>
+			<race_caucasian>0.0046</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_5>
+		<allele_6>
+			<race_caucasian>0.2188</race_caucasian>
+			<race_afrocarib>0.1425</race_afrocarib>
+			<race_asian>0.2458</race_asian>
+		</allele_6>
+
+		<allele_7>
+			<race_caucasian>0.2049</race_caucasian>
+			<race_afrocarib>0.3939</race_afrocarib>
+			<race_asian>0.1375</race_asian>
+		</allele_7>
+		<allele_8>
+			<race_caucasian>0.1227</race_caucasian>
+			<race_afrocarib>0.2458</race_afrocarib>
+			<race_asian>0.1083</race_asian>
+		</allele_8>
+
+		<allele_9>
+			<race_caucasian>0.1355</race_caucasian>
+			<race_afrocarib>0.1425</race_afrocarib>
+			<race_asian>0.3167</race_asian>
+		</allele_9>
+		<allele_9.3>
+			<race_caucasian>0.3032</race_caucasian>
+			<race_afrocarib>0.0642</race_afrocarib>
+			<race_asian>0.1750</race_asian>
+		</allele_9.3>
+
+		<allele_10>
+			<race_caucasian>0.0093</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0167</race_asian>
+		</allele_10>
+		<allele_10.3>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_10.3>
+	</locus_8> <!-- locus_THO1 -->
+
+	<locus_9> <!-- locus_FGA -->
+		<allele_17>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_17>
+		<allele_18>
+			<race_caucasian>0.0081</race_caucasian>
+			<race_afrocarib>0.0058</race_afrocarib>
+			<race_asian>0.0083</race_asian>
+		</allele_18>
+
+		<allele_18.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0112</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_18.2>
+		<allele_19>
+			<race_caucasian>0.0509</race_caucasian>
+			<race_afrocarib>0.0728</race_afrocarib>
+			<race_asian>0.0620</race_asian>
+		</allele_19>
+
+		<allele_19.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_19.2>
+		<allele_20>
+			<race_caucasian>0.1389</race_caucasian>
+			<race_afrocarib>0.0670</race_afrocarib>
+			<race_asian>0.1364</race_asian>
+		</allele_20>
+
+		<allele_20.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_20.2>
+		<allele_21>
+			<race_caucasian>0.1852</race_caucasian>
+			<race_afrocarib>0.0754</race_afrocarib>
+			<race_asian>0.1488</race_asian>
+		</allele_21>
+
+		<allele_21.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_21.2>
+		<allele_22>
+			<race_caucasian>0.1921</race_caucasian>
+			<race_afrocarib>0.1676</race_afrocarib>
+			<race_asian>0.1160</race_asian>
+		</allele_22>
+
+		<allele_22.1>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0010</race_asian>
+		</allele_22.1>
+		<allele_22.2>
+			<race_caucasian>0.0184</race_caucasian>
+			<race_afrocarib>0.0028</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_22.2>
+
+		<allele_23>
+			<race_caucasian>0.1551</race_caucasian>
+			<race_afrocarib>0.1615</race_afrocarib>
+			<race_asian>0.1694</race_asian>
+		</allele_23>
+		<allele_23.2>
+			<race_caucasian>0.0023</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0083</race_asian>
+		</allele_23.2>
+
+		<allele_24>
+			<race_caucasian>0.1262</race_caucasian>
+			<race_afrocarib>0.1676</race_afrocarib>
+			<race_asian>0.1529</race_asian>
+		</allele_24>
+		<allele_24.2>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0083</race_asian>
+		</allele_24.2>
+
+		<allele_25>
+			<race_caucasian>0.0775</race_caucasian>
+			<race_afrocarib>0.1145</race_afrocarib>
+			<race_asian>0.1160</race_asian>
+		</allele_25>
+		<allele_26>
+			<race_caucasian>0.0370</race_caucasian>
+			<race_afrocarib>0.0810</race_afrocarib>
+			<race_asian>0.0620</race_asian>
+		</allele_26>
+
+		<allele_26.2>
+			<race_caucasian>0.0010</race_caucasian>
+			<race_afrocarib>0.0010</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_26.2>
+		<allele_27>
+			<race_caucasian>0.0046</race_caucasian>
+			<race_afrocarib>0.0168</race_afrocarib>
+			<race_asian>0.0082</race_asian>
+		</allele_27>
+
+		<allele_28>
+			<race_caucasian>0.0012</race_caucasian>
+			<race_afrocarib>0.0084</race_afrocarib>
+			<race_asian>0.0041</race_asian>
+		</allele_28>
+	</locus_9> <!-- locus_FGA -->
+</locus>
