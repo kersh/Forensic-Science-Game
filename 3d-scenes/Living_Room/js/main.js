@@ -115,7 +115,7 @@ function whatClicked(){
 					//Debug information. END.
 
 					jQuery(function(){
-						getObject();
+						getObject(obj.skeleton.id);
 					});
 
 					obj.getSkeleton().setVisible(false);

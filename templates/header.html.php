@@ -18,12 +18,11 @@
 	
 	<script type="text/javascript">
 		jQuery(function() {
-			function getObject() {
+			function getObject(object_id) {
 				var object_data = new Array();
 				$.ajax({
 					type: 'POST',
-					url: 'index.php?action=getObject&object_id=1',
-					data: 'object_id=1',
+					url: 'index.php?action=getObject&object_id='+object_id,
 					dataType: 'json',
 					cache: false,
 					success: function(result) {
