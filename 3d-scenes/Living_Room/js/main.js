@@ -110,7 +110,6 @@ function whatClicked(){
 			if(aRay != null){
 				obj = aRay.object;
 				if( obj != null ){
-					
 					// Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
 					// document.getElementById("debugInfo2").innerHTML = "Object found (obj.skeleton.id) = " + obj.skeleton.id + ".<br><br>";
 					//Debug information. END.
@@ -118,6 +117,8 @@ function whatClicked(){
 					jQuery(function(){
 						getObject();
 					});
+
+					obj.getSkeleton().setVisible(false);
 
 					// Gets the model the mouse is currently over.
 					// aModel = XMLdoc.getElement( obj.skeleton.id );

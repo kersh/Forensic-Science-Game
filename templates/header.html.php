@@ -41,7 +41,6 @@
 				$(this).remove();
 				// show message if evidence bag is empty
 				if ($('ul#evidences li').length == 0) {
-					console.log("inside length if");
 					$('#evidenceBagNotice').show();
 				}
 			});
