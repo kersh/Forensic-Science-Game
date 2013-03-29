@@ -100,6 +100,13 @@ function render(){
 	lasttime = now;
 }
 
+jQuery(function() {
+	function returnObject(object_id) {
+		obj = XMLdoc.getElement(String(object_id)).setVisible(true);
+	}
+	window.returnObject=returnObject;
+});
+
 // Finds what has been clicked in a scene.
 function whatClicked(){
 	if( mouseOverCanvas ){

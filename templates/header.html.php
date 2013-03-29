@@ -38,6 +38,9 @@
 		function removeObject(id){
 			$('#itemLi'+id).slideUp('fast', function(){
 				$(this).remove();
+				jQuery(function(){
+					returnObject(id);
+				});
 				// show message if evidence bag is empty
 				if ($('ul#evidences li').length == 0) {
 					$('#evidenceBagNotice').show();
