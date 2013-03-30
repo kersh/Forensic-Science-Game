@@ -5,6 +5,7 @@
 	<ul id="evidences">
 		<p id="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
 	</ul>
+	<button id="checkItemsBtn" onClick="checkItems()" disabled="disabled">Check items for DNA</a>
 	<div class="clearAll"></div>
 </div>
 <div class="clearAll"></div>
