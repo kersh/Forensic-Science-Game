@@ -14,22 +14,24 @@ function countByRace($locusesArray, $race) {
 	$i = 0;
 	$n = 0;
 	while ($i < 10) {
-		$locus_id = 'locus_' . $i;
-		$allele_id1 = 'allele_' . $locusesArray[$i][0];
-		$allele_id2 = 'allele_' . $locusesArray[$i][1];
+		if ($i != 4) { // exclude the Amelogenin [X, Y]
+			$locus_id = 'locus_' . $i;
+			$allele_id1 = 'allele_' . $locusesArray[$i][0];
+			$allele_id2 = 'allele_' . $locusesArray[$i][1];
 
-		$allele_0_value = (float)$node->$locus_id->$allele_id1->$race;
-		$allele_1_value = (float)$node->$locus_id->$allele_id2->$race;
+			$allele_0_value = (float)$node->$locus_id->$allele_id1->$race;
+			$allele_1_value = (float)$node->$locus_id->$allele_id2->$race;
 
-		if ($locusesArray[$i][0] != $locusesArray[$i][1]) {
-			$tempSum = 2 * $allele_0_value * $allele_1_value;
-		}
+			if ($locusesArray[$i][0] != $locusesArray[$i][1]) {
+				$tempSum = 2 * $allele_0_value * $allele_1_value;
+			}
 
-		if ($locusesArray[$i][0] == $locusesArray[$i][1]) {
-			$tempSum = pow($allele_0_value, 2);
+			if ($locusesArray[$i][0] == $locusesArray[$i][1]) {
+				$tempSum = pow($allele_0_value, 2);
+			}
+			$sum = $sum * $tempSum;
 		}
 		$i++;
-		$sum = $sum * $tempSum;
 	}
 	return $sum;
 }

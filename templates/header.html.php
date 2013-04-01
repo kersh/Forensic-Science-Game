@@ -28,7 +28,7 @@
 
 			// items:itemList.join("::");
 
-			window.location = "index.php?action=showSelectedItems&items="+itemList.join("::");
+			window.location = "index.php?action=showSelectedItems&room_name=<?php echo $room_name; ?>&items="+itemList.join("::");
 		}
 	</script>
 	<script type="text/javascript">

@@ -240,7 +240,7 @@
 		</allele_27>
 	</locus_3> <!-- locus_D2 -->
 
-	<locus_4> <!-- locus_D8 -->
+	<locus_5> <!-- locus_D8 -->
 		<allele_8>
 			<race_caucasian>0.0197</race_caucasian>
 			<race_afrocarib>0.0028</race_afrocarib>
@@ -306,9 +306,9 @@
 			<race_afrocarib>0.0056</race_afrocarib>
 			<race_asian>0.0041</race_asian>
 		</allele_19>
-	</locus_4> <!-- locus_D8 -->
+	</locus_5> <!-- locus_D8 -->
 
-	<locus_5> <!-- locus_D21 -->
+	<locus_6> <!-- locus_D21 -->
 		<allele_23.2>
 			<race_caucasian>0.0012</race_caucasian>
 			<race_afrocarib>0.0010</race_afrocarib>
@@ -407,9 +407,9 @@
 			<race_afrocarib>0.0112</race_afrocarib>
 			<race_asian>0.0010</race_asian>
 		</allele_36>
-	</locus_5> <!-- locus_D21 -->
+	</locus_6> <!-- locus_D21 -->
 
-	<locus_6> <!-- locus_D18 -->
+	<locus_7> <!-- locus_D18 -->
 		<allele_10>
 			<race_caucasian>0.0104</race_caucasian>
 			<race_afrocarib>0.0010</race_afrocarib>
@@ -492,9 +492,9 @@
 			<race_afrocarib>0.0028</race_afrocarib>
 			<race_asian>0.0042</race_asian>
 		</allele_23>
-	</locus_6> <!-- locus_D18 -->
+	</locus_7> <!-- locus_D18 -->
 
-	<locus_7> <!-- locus_D19 -->
+	<locus_8> <!-- locus_D19 -->
 		<allele_10>
 			<race_caucasian>0.0012</race_caucasian>
 			<race_afrocarib>0.0140</race_afrocarib>
@@ -582,9 +582,9 @@
 			<race_afrocarib>0.0010</race_afrocarib>
 			<race_asian>0.0010</race_asian>
 		</allele_18.2>
-	</locus_7> <!-- locus_D19 -->
+	</locus_8> <!-- locus_D19 -->
 
-	<locus_8> <!-- locus_THO1 -->
+	<locus_9> <!-- locus_THO1 -->
 		<allele_5>
 			<race_caucasian>0.0046</race_caucasian>
 			<race_afrocarib>0.0028</race_afrocarib>
@@ -628,9 +628,9 @@
 			<race_afrocarib>0.0010</race_afrocarib>
 			<race_asian>0.0010</race_asian>
 		</allele_10.3>
-	</locus_8> <!-- locus_THO1 -->
+	</locus_9> <!-- locus_THO1 -->
 
-	<locus_9> <!-- locus_FGA -->
+	<locus_10> <!-- locus_FGA -->
 		<allele_17>
 			<race_caucasian>0.0012</race_caucasian>
 			<race_afrocarib>0.0028</race_afrocarib>
@@ -746,5 +746,5 @@
 			<race_afrocarib>0.0084</race_afrocarib>
 			<race_asian>0.0041</race_asian>
 		</allele_28>
-	</locus_9> <!-- locus_FGA -->
+	</locus_10> <!-- locus_FGA -->
 </locus>

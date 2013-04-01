@@ -20,5 +20,5 @@
 		<p>No items where selected</p>
 	</div>
 <?php endif; ?>
-<a href="index.php?action=generateDNAProfile&dnaFound=<?php echo $dna_found; ?>">Get DNA results</a>
+<a href="index.php?action=generateDNAProfile&room_name=<?php echo $room_name; ?>&dnaFound=<?php echo $dna_found; ?>">Get DNA results</a>
 </div> <!-- end #items_wrapper -->
