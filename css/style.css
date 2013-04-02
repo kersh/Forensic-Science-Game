@@ -20,7 +20,7 @@ body:before { /* top shadow */
 	z-index: 100;
 }
 
-#wrapper {
+#container {
 	width: 860px;
 	margin: 0 auto;
 }

@@ -12,7 +12,7 @@
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 
@@ -98,7 +98,7 @@
 
 </head>
 <body>
-	<div id="wrapper">
+	<div id="container">
 
 		<!-- Header containing top section & navigation. -->
 		<header>
