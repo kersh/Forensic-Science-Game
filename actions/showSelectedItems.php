@@ -7,7 +7,8 @@ if (!isset($_SESSION['student_number'])) {
 
 $userBtn="logoutBtn";
 
-$room_name = $_GET['room_name'];
+$budget_spent = $_GET['budget_spent'];
+$room_name = str_replace("_", " ", $_GET['room_name']);
 // convert received item list with item array
 $itemList = $_GET['items'];
 $object_names = explode("::", $itemList);
@@ -15,6 +16,12 @@ $object_names = explode("::", $itemList);
 // array to hold data for each item
 $each_item_data = array();
 $dna_found = false;
+
+// Save spent budget into database
+$saveBudgetQuery = "UPDATE room_user 
+					SET spent_budget='$budget_spent'
+					WHERE user_id=$_SESSION[student_number]
+					AND room_name='$room_name'";
 
 // add all data about each room
 for ($i=0; $i < count($object_names); $i++) {

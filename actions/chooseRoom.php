@@ -20,7 +20,7 @@ $receivedRooms = mysql_query("SELECT *
 $i = 0;
 while($row = mysql_fetch_array($receivedRooms)) {
 	$room_user_data[$i][0] = $row['room_user_id'];
-	$room_user_data[$i][1] = $row['room_id'];
+	$room_user_data[$i][1] = $row['room_name'];
 	$room_user_data[$i][2] = $row['room_status'];
 	$room_user_data[$i][3] = $row['spent_budget'];
 
@@ -29,7 +29,7 @@ while($row = mysql_fetch_array($receivedRooms)) {
 
 // add all data about each room
 for ($i=0; isset($room_user_data[$i][1]); $i++) {
-	$query = "SELECT * FROM rooms WHERE room_id='".$room_user_data[$i][1]."'";
+	$query = "SELECT * FROM rooms WHERE room_name='".$room_user_data[$i][1]."'";
 	$getRoom = mysql_query($query);
 	while($row = mysql_fetch_array($getRoom)) {
 		$each_room_data[$i][0] = $row['room_name'];

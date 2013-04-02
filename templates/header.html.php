@@ -18,15 +18,16 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		function checkItems(){
+			var budget_current;
+			budget_current = $('#budget span').text();
 			var itemList = new Array();
-			// var testVar = "someTestTo::Test";
 
 			// Iterate through the <li> items inside <ul id="evidences">
 			$("#evidences").children("li").each(function() {
 				itemList.push($(this).children("h5").text());
 			});
 
-			window.location = "index.php?action=showSelectedItems&room_name=<?php echo $room_name; ?>&items="+itemList.join("::");
+			window.location = "index.php?action=showSelectedItems&budget_spent="+budget_current+"&room_name=<?php echo $room_name; ?>&items="+itemList.join("::");
 		}
 	</script>
 	<script type="text/javascript">
