@@ -116,6 +116,11 @@
 		#evidenceBag ul#evidences li img {
 			z-index: 0;
 		}
+
+#budget_warning {
+	display: none;
+	color: #ff0000;
+}
 /*---------------------------------------------------*/
 /* ROOM ITEM END */
 /*---------------------------------------------------*/

@@ -16,7 +16,6 @@
 
 	<?php if(isset($room_name)): ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="js/checkEAInput.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		function checkItems(){
 			var itemList = new Array();
@@ -27,33 +26,56 @@
 				itemList.push($(this).children("h5").text());
 			});
 
-			// items:itemList.join("::");
-
 			window.location = "index.php?action=showSelectedItems&room_name=<?php echo $room_name; ?>&items="+itemList.join("::");
 		}
 	</script>
 	<script type="text/javascript">
 		jQuery(function() {
 			function getObject(object_id) {
+				var budget_current;
+				var canRemove;
 				var object_data = new Array();
 				$.ajax({
 					type: 'POST',
 					url: 'index.php?action=getObject&object_id='+object_id,
+					async: false,
 					dataType: 'json',
 					cache: false,
 					success: function(result) {
 						object_data = result;
-						$('#evidenceBagNotice').hide();
-						$('#checkItemsBtn').removeAttr("disabled");
-						$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="removeBtn" onClick="removeObject('+object_data[0]+')">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£'+ object_data[3] +'</p></li>');
-						$('#itemLi'+object_data[0]).slideDown();
+						budget_current = $('#budget span').text();
+						if( (parseInt(budget_current) - parseInt(object_data[3])) >= 0 ) {
+							canRemove = true;
+							$('#evidenceBagNotice').hide();
+							$('#checkItemsBtn').removeAttr("disabled");
+							$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="removeBtn" onClick="removeObject('+object_data[0]+')">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£<span>'+ object_data[3] +'</span></p></li>');
+							$('#itemLi'+object_data[0]).slideDown();
+							budget_current = budget_current - object_data[3];
+							$('#budget span').text(budget_current);
+						} else {
+							canRemove = false;
+							$('#budget_warning').show().delay(4000).fadeOut();
+						}
 					},
 				});
+				if (canRemove) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 			window.getObject=getObject;
 		});
 		function removeObject(id){
+			var budget_current;
+			var current_cost;
 			$('#itemLi'+id).slideUp('fast', function(){
+				current_cost = $('#itemLi'+id+' .objectPrice span').text();
+				budget_current = $('#budget span').text();
+				budget_current = parseInt(budget_current) + parseInt(current_cost);
+				$('#budget span').text(budget_current);
+
 				$(this).remove();
 				jQuery(function(){
 					returnObject(id);

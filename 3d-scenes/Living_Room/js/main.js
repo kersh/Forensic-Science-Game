@@ -111,6 +111,7 @@ jQuery(function() {
 function whatClicked(){
 	if( mouseOverCanvas ){
 		var mousepos = mouse.getMousePosition();
+		var canRemove;
 
 		if( mousepos.x && mousepos.y ){
 			aRay = scene.pick( mousepos.x, mousepos.y );
@@ -122,10 +123,11 @@ function whatClicked(){
 					//Debug information. END.
 
 					jQuery(function(){
-						getObject(obj.skeleton.id);
+						canRemove = getObject(obj.skeleton.id);
 					});
-
-					obj.getSkeleton().setVisible(false);
+					console.log(canRemove);
+					if (canRemove)
+						obj.getSkeleton().setVisible(false);
 
 					// Gets the model the mouse is currently over.
 					// aModel = XMLdoc.getElement( obj.skeleton.id );
