@@ -16,6 +16,7 @@
 
 	<?php if(isset($room_name)): ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/checkEAInput.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		function checkItems(){
 			var itemList = new Array();

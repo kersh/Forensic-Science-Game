@@ -2,6 +2,7 @@
 
 <!-- Here user will add evidences found inside 3D scene -->
 <div id="evidenceBag">
+	<p class="budget">£ <?php echo $room_budget; ?></p>
 	<ul id="evidences">
 		<p id="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
 	</ul>

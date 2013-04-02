@@ -5,6 +5,8 @@ if (!isset($_SESSION['student_number'])) {
 	header('Location: index.php?action=login&error=ok&userBtn=loginBtn');
 }
 
+$userBtn="logoutBtn";
+
 include('classes/dnaProfile.class.php');
 
 try {
@@ -12,6 +14,9 @@ try {
 	$dnaFound = $_GET['dnaFound'];
 	$room_name = $_GET['room_name'];
 	$student_number = $_SESSION['student_number'];
+	
+	// create an object of DNA profile to generate new DNA profile and count EAs.
+	$dnaProfile = new dnaProfile();
 
 	// array that hold the whole DNA with all block in it.
 	$locuses;
@@ -25,9 +30,6 @@ try {
 									 AND room_name='$room_name'");
 
 		if (mysql_num_rows($receivedDNAs) < 1) { // generate DNA profile
-			// create objetc of DNA profile to generate new DNA profile and count EAs.
-			$dnaProfile = new dnaProfile();
-
 			// First DNA profile is belonging to victim
 			$belonging = "victim"; // default belonging
 			for ($n = 0; $n < 2; $n++) {
@@ -162,48 +164,27 @@ try {
 			} // end for loop (victim / suspect iteration)
 		}
 	}
-	
-	// $sum_caucasian = $dnaProfile->countByRace($locuses, 'race_caucasian');
-	// $sum_afrocarib = $dnaProfile->countByRace($locuses, 'race_afrocarib');
-	// $sum_asian = $dnaProfile->countByRace($locuses, 'race_asian');
 
-	// $test = '1.73326809679E-16';
-	// $testFloat = 1.73326809679E-16;
-	// $test20Percent = (float) $test * 0.20;
-	// $test80Percent = (float) $test * 0.80;
-	// $test120Percent = (float) $test * 1.20;
-	// $difference80 = $test - $test20Percent;
-	// $difference120 = $test + $test20Percent;
-	
+	// get all alleles for DNA profile of victim
+	$allelesArray = array();
+	while($allelesArray[] = mysql_fetch_array($receivedDNAs));
 
-	// echo '20Percent: ';
-	// echo $test20Percent;
-	// echo '<br/>';
+	$suspectDNA; // this DNA profile will have missing alleles
+	$n = 0;
+	// loop to make suspect DNA from db as a separate array
+	for ($i = 4; $i < 26; $i++) {
+		$suspectDNA[$n] = $allelesArray[1][$i];
+		$n++;
+	}
 
-	// echo '<br/>';
-	// echo '80Percent: ';
-	// echo $test80Percent;
-	// echo '<br/>';
+	$dnaProfile->setSuspectDNA($suspectDNA);
 
-	// echo '<br/>';
-	// echo 'Difference: ';
-	// echo $difference80;
-	// echo '<br/>';
-
-	// echo '<br/>';
-	// echo '120Percent: ';
-	// echo $test120Percent;
-	// echo '<br/>';
-
-	// echo '<br/>';
-	// echo 'Difference: ';
-	// echo $difference120;
-	// echo '<br/>';
-
-	// if ($test120Percent == $difference120)
-	// 	echo "true","\n";
-	// else
-	// 	echo "false";
+	// Determine how many missing piecec in DNA will be
+	$numOfMisAlleles = rand(6, 10);
+	for ($i = 0; $i < $numOfMisAlleles; $i++) {
+		$dnaProfile->makeMissedSection();
+	}
+	$suspectDNA = $dnaProfile->getSuspectDNA();
 
 } catch(Exception $e) {
 	// Found some error

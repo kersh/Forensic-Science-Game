@@ -9,4 +9,6 @@ $userBtn="logoutBtn";
 
 $room_name = $_GET['room'];
 
+$room_budget = $_GET['room_budget'];
+
 ?>

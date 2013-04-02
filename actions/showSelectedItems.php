@@ -5,6 +5,8 @@ if (!isset($_SESSION['student_number'])) {
 	header('Location: index.php?action=login&error=ok&userBtn=loginBtn');
 }
 
+$userBtn="logoutBtn";
+
 $room_name = $_GET['room_name'];
 // convert received item list with item array
 $itemList = $_GET['items'];
