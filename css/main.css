@@ -6,13 +6,30 @@
 /* ROOM ITEM */
 /*****************************************************/
 #rooms_wrapper {
-	/*background: #ddd;*/
-	overflow: hidden;
+	width: 810px;
+	padding: 0 0 0 16px;
+}
+
+.rooms_wrapper_icon {
+	float: left;
+	margin: -1px 3px 0 0;
+}
+.rooms_wrapper_h3 {
+	float: left;
+}
+.rooms_wrapper_h3 h3 {
+	margin: 0 0 10px 0;
+	font-size: 1.4em;
+	line-height: 1em;
 }
 
 .room_item {
-	background: #ccc;
+	/*background: #fff;*/
 	margin: 0 0 20px 0;
+	/*border: 1px solid #ccc*/;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 2px 1px 4px #888;
 }
 
 	.room_item .room_img, .room_item .room_img img {
@@ -23,7 +40,7 @@
 
 	.room_item .room_content {
 		float: left;
-		width: 500px;
+		width: 490px;
 		margin: 0 0 0 10px;
 	}
 
@@ -36,7 +53,7 @@
 
 		.room_item .room_content p {
 			padding: 0;
-			margin: 10px 0;
+			margin: 2px 0;
 		}
 			.room_item .room_content span {
 				font-weight: bold;
@@ -45,6 +62,10 @@
 
 		.room_item .room_content .desc {
 			font-size: 0.8em;
+			line-height: 1.2em;
+			padding: 0;
+			margin: 10px 0;
+			border-bottom: 1px solid #bbb;
 		}
 /*---------------------------------------------------*/
 /* ROOM ITEM END */
@@ -73,8 +94,11 @@
 }
 
 #evidenceBag {
+	width: 860px;
 	top: 40px;
 	left: 0;
+	margin: 0;
+	z-index: 9;
 }
 
 #evidenceBagNotice {
@@ -88,6 +112,9 @@
 	background: #ddd;
 	overflow: hidden;
 	height: 160px;
+	margin: 0;
+	border-radius: 4px;
+	z-index: 99;
 }
 	#evidenceBag ul#evidences li {
 		background: #ccc;
@@ -116,11 +143,240 @@
 		#evidenceBag ul#evidences li img {
 			z-index: 0;
 		}
-
+.evidenceBag_info {
+	position: relative;
+	height: 28px;
+	z-index: -99;
+}
+#budget {
+	float: left;
+	background: #eee;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	padding: 4px 5px 13px 5px;
+	margin: 0 0 -30px 0;
+}
+	#budget span {
+		font-weight: bold;
+	}
+#checkItemsBtn {
+	float: right;
+}
 #budget_warning {
 	display: none;
 	color: #ff0000;
 }
 /*---------------------------------------------------*/
-/* ROOM ITEM END */
+/* END / CANVAS & GAME BAG ITEM */
+/*---------------------------------------------------*/
+
+/*****************************************************/
+/* SHOW SELECTED ITEMS */
+/*****************************************************/
+#objects_wrapper {
+	width: 430px;
+	padding: 0 0 0 16px;
+}
+
+.objects_wrapper_icon {
+	float: left;
+	margin: -1px 3px 0 0;
+}
+
+.objects_wrapper_h3 {
+	float: left;
+}
+
+.objects_wrapper_h3 h3 {
+	margin: 0 0 10px 0;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.container_for_header {
+	border-bottom: 1px solid #aaa;
+	margin-bottom: 20px;
+}
+
+.object_item {
+	/*background: #fff;*/
+	margin: 10px 0 20px 0;
+	/*border-top: 1px solid #ccc;*/
+	border-bottom: 1px solid #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+	.object_item .object_img, .object_item .object_img img {
+		float: left;
+		margin: 2px;
+		padding: 0;
+	}
+
+	.object_item .object_content {
+		float: left;
+		width: 300px;
+		margin: 0 0 0 10px;
+	}
+
+		.object_item .object_content h4 {
+			font-size: 1.4em;
+			line-height: 1em;
+			padding: 0;
+			margin: 5px 0;
+		}
+
+		.object_item .object_content p {
+			padding: 0;
+			margin: 2px 0;
+		}
+			.object_item .object_content span {
+				font-weight: bold;
+				color: #333;
+			}
+/*---------------------------------------------------*/
+/* END / SHOW SELECTED ITEMS */
+/*---------------------------------------------------*/
+
+/*****************************************************/
+/* GENERATE DNA PROFILE */
+/*****************************************************/
+#dna_wrapper {
+	width: 430px;
+	padding: 0 0 0 16px;
+}
+#table_wrapper {
+	width: 802px;
+}
+	#table_wrapper h5:first-child {
+		margin: 10px 0 5px 0;
+	}
+	#table_wrapper h5 {
+		margin: 50px 0 5px 0;
+		padding: 2px 5px;
+		border-top: 2px solid #348fcc;
+		border-bottom: 2px solid #348fcc;
+		border-radius: 5px;
+	}
+.dna_profile_table {
+	border: 2px solid #444;
+}
+	.dna_profile_table tr, .dna_profile_table td, .dna_profile_table th {
+		border: 1px solid #777;
+	}
+
+.dna_profile_lists {
+	width: 800px;
+	height: 71px;
+	border: 2px solid #777;
+	border-right: none;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 1px 2px 5px #aaa;
+}
+.dna_profile_lists ul {
+	list-style-type: none;
+	margin: 0;
+}
+	.dna_profile_headers li, .dna_profile_data > li {
+		float: left;
+	}
+	
+	.dna_profile_headers {
+		font-weight: bold;
+	}
+
+	.dna_profile_headers li {
+		border-right: 2px solid #999;
+		/*border-top: 1px solid #555;*/
+		border-bottom: 1px solid #999;
+		padding: 10px 0;
+		width: 61px;
+		text-align: center;
+	}
+
+	.dna_profile_headers .empty_field {
+		width: 84px;
+		padding: 10px 0;
+		height: 20px;
+		border-right: 1px solid #999;
+	}
+	.dna_profile_headers .amelogenin {
+		width: 83px;
+	}
+
+	.dna_profile_data li {
+		float: left;
+		border-right: 1px solid #999;
+	}
+	.dna_profile_data li.genotype {
+		width: 62px;
+		padding: 5px 11px;
+	}
+	.dna_profile_data ul.alleles li {
+		padding: 5px 0;
+		text-align: center;
+		width: 30px;
+	}
+		.dna_profile_data ul.alleles li.data_amelogenin {
+			padding: 5px 0;
+			text-align: center;
+			width: 41px;
+		}
+.after_tables {
+	margin: 40px 0 0 0;
+	padding: 10px 5px;
+	border-top: 2px solid #348fcc;
+	/*border-bottom: 2px solid #348fcc;*/
+	border-radius: 5px;
+}
+	.after_tables p.field_notice {
+		opacity: 0.5;
+	}
+
+	.after_tables p.field_title {
+		float: left;
+		margin: 5px 5px 0 0;
+	}
+/*---------------------------------------------------*/
+/* END / GENERATE DNA PROFILE */
+/*---------------------------------------------------*/
+
+
+/*****************************************************/
+/* GENERATE DNA PROFILE */
+/*****************************************************/
+#ea_results {
+	width: 200px;
+	padding: 0 0 0 16px;
+	margin: 10px 0 80px 0;
+}
+	#ea_results p.your_result:first-child {
+		border: none;
+	}
+	#ea_results p.your_answer:last-of-type {
+		border: none;
+	}
+	#ea_results p.your_result {
+		font-size: 1.2em;
+		text-shadow: 1px 1px 1px #ccc;
+		margin: 0;
+		border-top: 2px solid #ddd;
+	}
+	#ea_results p.your_answer {
+		font-size: 1em;
+		margin: 0;
+		padding: 5px 0 30px 0;
+		border-bottom: 1px solid #888;
+	}
+	.wrong {
+		color: #d81919;
+		font-weight: bold;
+	}
+	.correct {
+		color: #1bc200;
+		font-weight: bold;
+	}
+/*---------------------------------------------------*/
+/* END / CHECK EAs */
 /*---------------------------------------------------*/

@@ -1,5 +1,8 @@
-<h3>Select room that you want to play:</h3>
-
+<div class="container_for_header">
+	<div class="rooms_wrapper_icon"><i class="icon-th-list"></i></div>
+	<div class="rooms_wrapper_h3"><h3>Select room that you want to play:</h3></div>
+	<div class="clearAll"></div>
+</div>
 <div id="rooms_wrapper">
 <?php if(count($each_room_data) != 0): ?>
 
@@ -12,7 +15,7 @@
 				<p class="budget"><span>Given budget:</span> £<?php echo $each_room_data[$i][2]; ?></p>
 				<p class="spent_budget"><span>Spent budget:</span> £<?php echo $room_user_data[$i][3]; ?></p>
 				<p class="status"><span>Status:</span> <?php echo $room_user_data[$i][2]; ?></p>
-				<a href="index.php?action=playGame&room_id=<?php echo $room_user_data[$i][1]; ?>&room=<?php echo str_replace(' ', '_', $each_room_data[$i][0]); ?>&room_budget=<?php echo $each_room_data[$i][2]; ?>">Play</a>
+				<a href="index.php?action=playGame&room_id=<?php echo $room_user_data[$i][1]; ?>&room=<?php echo str_replace(' ', '_', $each_room_data[$i][0]); ?>&room_budget=<?php echo $each_room_data[$i][2]; ?>" class="btn btn-primary">Play</a>
 			</div>
 			<div class="clearAll"></div>
 		</div>
@@ -23,4 +26,5 @@
 		<p>No room here</p>
 	</div>
 <?php endif; ?>
+<div class="clearAll"></div>
 </div>

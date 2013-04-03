@@ -2,11 +2,13 @@
 
 <!-- Here user will add evidences found inside 3D scene -->
 <div id="evidenceBag">
-	<p id="budget">£ <span><?php echo $room_budget; ?></span></p><p id="budget_warning">! No funds available. Delete object to return money.</p>
+	<button id="checkItemsBtn" onClick="checkItems()" disabled="disabled" class="btn btn-primary btn-mini">Check items for DNA</button>
+	<div class="evidenceBag_info">
+		<p id="budget">Available budget: £<span><?php echo $room_budget; ?></span></p><p id="budget_warning">! No funds available. Delete object to return money.</p>
+	</div>
 	<ul id="evidences">
 		<p id="evidenceBagNotice">Empty bag. Click on the object in scene to add them here.</p>
 	</ul>
-	<button id="checkItemsBtn" onClick="checkItems()" disabled="disabled">Check items for DNA</a>
 	<div class="clearAll"></div>
 </div>
 <div class="clearAll"></div>

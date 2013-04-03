@@ -40,11 +40,15 @@ try {
 }
 $action = !isset($_GET['action']) ? 'login' : $_GET['action'];
 
-if($action != 'getObject') {
+if($action != 'getObject' && $action != 'login') {
 	// Render templates
 	include("templates/header.html.php");
 	include(sprintf("templates/%s.html.php", $action));
 	include("templates/footer.html.php");	
+}
+
+if($action == 'login'){
+	include("templates/login.html.php");
 }
 
 

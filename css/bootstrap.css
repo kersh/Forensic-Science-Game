@@ -12,6 +12,11 @@
   *zoom: 1;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+    width: auto;
+    vertical-align: baseline;
+}
+
 .clearfix:before,
 .clearfix:after {
   display: table;

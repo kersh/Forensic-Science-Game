@@ -102,13 +102,20 @@
 
 		<!-- Header containing top section & navigation. -->
 		<header>
-			<h1>University of Wolverhampton</h1>
 			<nav role="navigation">
-				<ul>
-					<?php if($userBtn=="logoutBtn"){ ?>
-						<li><a href="index.php?action=logout">Log Out</a></li>
-					<?php } ?>
-				</ul>
+				<div id="user_info">
+					<div class="user_info_content">
+						<i class="icon-user"></i>
+						Logged in as
+						<strong><?php echo $_SESSION['student_number']; ?></strong>
+					</div>
+					<div class="user_info_content_btn">
+						<?php if($userBtn=="logoutBtn"){ ?>
+							<a href="index.php?action=logout" class="btn btn-mini btn-inverse">Log Out</a>
+						<?php } ?>
+					</div>
+					</p>
+				</div>
 			</nav>
 		</header>
 
