@@ -94,51 +94,86 @@
 }
 
 #evidenceBag {
-	width: 860px;
+	background: url(../images/evidence_bag/evidenceBag_background.png);
+	width: 866px;
+	height: 216px;
 	top: 40px;
 	left: 0;
 	margin: 0;
-	z-index: 9;
+	padding: 3px 0 0 0;
 }
 
 #evidenceBagNotice {
 	text-align: center;
 	margin-top: 75px;
-	color: #aaa;
+	color: #eee;
+	text-shadow: 0px -2px 3px #000;
 }
 
 #evidenceBag ul#evidences {
 	list-style-type: none;
-	background: #ddd;
+	/*background: #ddd;*/
 	overflow: hidden;
-	height: 160px;
+	/*height: 160px;*/
 	margin: 0;
+	padding: 0 25px;
 	border-radius: 4px;
 	z-index: 99;
 }
 	#evidenceBag ul#evidences li {
-		background: #ccc;
+		/*background: #ccc;*/
+		/*background: url(../images/evidence_bag/evidenceBag_evidence_template.png);*/
+		/*width: 136px;*/
+		height: 155px;
 		float: left;
-		margin: 10px 0 10px 10px;
+		margin: 15px 0 10px 10px;
+		padding: 0 18px;
+		z-index: 99;
 	}
+		#evidenceBag ul#evidences li .li_background {
+			background: url(../images/evidence_bag/evidenceBag_evidence_template.png);
+			height: 155px;
+			width: 136px;
+			position: absolute;
+			z-index: 99;
+			margin: 0 0 0 -17px;
+		}
 		#evidenceBag ul#evidences li h5, #evidenceBag ul#evidences li p.objectPrice {
 			padding: 0;
-			margin: 2px 0;
+			margin: 3px 0 0 0;
 			text-align: center;
+			z-index: 100;
+			position: relative;
+		}
+		#evidenceBag ul#evidences li p.objectPrice {
+			margin: 0;
+			z-index: 100;
 		}
 		#evidenceBag ul#evidences li p.objectPrice {
 			font-size: 0.8em;
+			z-index: 100;
 		}
 		#evidenceBag ul#evidences li div.removeBtn {
 			font-size: 0.8em;
-			background: #FF4B41;
+			color: #fff;
+			background: #a90329; /* Old browsers */
+			background: #f85032; /* Old browsers */
+			background: -moz-linear-gradient(top, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f85032), color-stop(50%,#f16f5c), color-stop(51%,#f6290c), color-stop(71%,#f02f17), color-stop(100%,#e73827)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827',GradientType=0 ); /* IE6-9 */
 			text-align: center;
-			padding: 5px 0;
-			margin-bottom: -25px;
+			padding: 0;
+			margin: 5px 0 -25px 14px;
 			z-index: 1;
-			width: 100px;
+			border-radius: 3px;
+			width: 70px;
 			position: absolute;
 			cursor: pointer;
+			z-index: 100;
 		}
 		#evidenceBag ul#evidences li img {
 			z-index: 0;
@@ -146,21 +181,22 @@
 .evidenceBag_info {
 	position: relative;
 	height: 28px;
-	z-index: -99;
+	z-index: 9;
 }
 #budget {
 	float: left;
-	background: #eee;
-	border: 1px solid #bbb;
-	border-radius: 4px;
+	/*background: #eee;*/
+	/*border: 1px solid #bbb;*/
+	/*border-radius: 4px;*/
 	padding: 4px 5px 13px 5px;
-	margin: 0 0 -30px 0;
+	margin: 0 0 -30px 355px;
 }
 	#budget span {
 		font-weight: bold;
 	}
 #checkItemsBtn {
 	float: right;
+	margin: 5px 30px 0 0;
 }
 #budget_warning {
 	display: none;

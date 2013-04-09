@@ -51,7 +51,7 @@
 							canRemove = true;
 							$('#evidenceBagNotice').hide();
 							$('#checkItemsBtn').removeAttr("disabled");
-							$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="removeBtn" onClick="removeObject('+object_data[0]+')">remove</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£<span>'+ object_data[3] +'</span></p></li>');
+							$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="li_background"></div><div class="removeBtn" onClick="removeObject('+object_data[0]+')">REMOVE</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£<span>'+ object_data[3] +'</span></p></li>');
 							$('#itemLi'+object_data[0]).slideDown();
 							budget_current = budget_current - object_data[3];
 							$('#budget span').text(budget_current);
