@@ -37,6 +37,11 @@ var rotateFactor = 0.0005;
 var aModel;
 // -----------------------------------
 
+// *********************************** Hover object
+var hoverobj;
+var yellowmat;
+// -----------------------------------
+
 // A funtion to start GLGE. Sets key variables.
 function startGLGE() {
 	canvasElement = document.getElementById('canvas');
@@ -52,6 +57,8 @@ function startGLGE() {
 		renderer = new GLGE.Renderer(canvasElement);
 		scene = new GLGE.Scene();
 		
+		yellowmat=XMLdoc.getElement("yellow");
+
 		scene = XMLdoc.getElement("mainScene");
 		renderer.setScene(scene);
 
@@ -125,12 +132,9 @@ function whatClicked(){
 					jQuery(function(){
 						canRemove = getObject(obj.skeleton.id);
 					});
-					console.log(canRemove);
 					if (canRemove)
 						obj.getSkeleton().setVisible(false);
 
-					// Gets the model the mouse is currently over.
-					// aModel = XMLdoc.getElement( obj.skeleton.id );
 				} else {
 					document.getElementById("debugInfo2").innerHTML = document.getElementById("debugInfo2").innerHTML + "NO ANI | MOUSE UP. ";
 				}
@@ -147,26 +151,9 @@ function mouselook(){
 		var scrollTop = $(window).scrollTop();
 		var elementOffset = $('#myDivContainer').offset().top;
 		var topOffset = elementOffset - scrollTop;
- 		// var testval = $(window).height() - ($('#myDivContainer').offset().top + $('#myDivContainer').height());
-
-		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		// document.getElementById("debugInfo").innerHTML = "Debug info raw position: <br>" + 
-			// "<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
-		//Debug information. END.
 		
 		mousepos.x = mousepos.x - document.getElementById("myDivContainer").offsetLeft;
 		mousepos.y = mousepos.y - topOffset;
-
-		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		// document.getElementById("debugInfo2").innerHTML = "Debug info after offset: <br>" + 
-			// "<br>mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br>";
-		//Debug information. END.
-
-		//Debug information. This requires a div in your HTML. E.g. where id=debugInfo.
-		// document.getElementById("debugInfo").innerHTML = document.getElementById("debugInfo").innerHTML +
-		// 	"<br>offsetLeft = " + document.getElementById("myDivContainer").offsetLeft + " | offsetTop = " + document.getElementById("myDivContainer").offsetTop + ".<br>" +
-		// 	"<br>With offset - mousepos.x = " + mousepos.x + " | mousepos.y = " + mousepos.y + ".<br><br>";
-		//Debug information. END.
 		
 		// Get camera variables.
 		var camera = scene.camera;
@@ -176,7 +163,6 @@ function mouselook(){
 		var width = document.getElementById('canvas').offsetWidth;
 		if(mousepos.x < width * 0.4){
 			var turn = Math.pow( (mousepos.x - width * 0.4) / (width * 0.4), 2 ) * 0.0008 * (now - lasttime);
-			//var turn = 0.005;
 			camera.setRotY(cameraRot.y + turn);
 		}
 		if(mousepos.x > width * 0.6){
@@ -187,15 +173,35 @@ function mouselook(){
 		var height = document.getElementById('canvas').offsetHeight;
 		if(mousepos.y < height * 0.4){
 			var turn = Math.pow( (mousepos.y - height * 0.4) / (height * 0.4), 2 ) * 0.0008 * (now - lasttime);
-			//var turn = 0.005;
 			camera.setRotX(cameraRot.x + turn);
 		}
 		if(mousepos.y > height * 0.6){
 			var turn = Math.pow( (mousepos.y - height * 0.6) / (height * 0.4), 2 ) * 0.0008 * ( now - lasttime);
 			camera.setRotX(cameraRot.x - turn);
 		}
-		
-	}
+
+		// hover object
+		if(mousepos.x && mousepos.y){
+			obj = scene.pick(mousepos.x, mousepos.y);
+
+			if(obj != null) {
+				// convert to an object if the pick wasn't null.
+				obj = obj.object;
+
+				if(obj && obj != hoverobj){
+					if(obj.getId() != "wall"){
+						obj.oldmaterial=obj.getMaterial();
+						obj.setMaterial(yellowmat);
+					}
+					// return the old material when mouse is not over the object
+					if(hoverobj && hoverobj.getId() != "wall")
+						hoverobj.setMaterial(hoverobj.oldmaterial);
+
+					hoverobj = obj;
+				} // end if (obj && obj != hoverobj)
+			}
+		}
+	} // end if(mouseOverCanvas)
 }
 
 // Checks for key events and moves the camera.
