@@ -40,6 +40,7 @@ var aModel;
 // *********************************** Hover object
 var hoverobj;
 var yellowmat;
+var matAmount;
 // -----------------------------------
 
 // A funtion to start GLGE. Sets key variables.
@@ -190,18 +191,51 @@ function mouselook(){
 
 				if(obj && obj != hoverobj){
 					if(obj.getId() != "wall"){
-						obj.oldmaterial=obj.getMaterial();
-						obj.setMaterial(yellowmat);
+						matAmount = countMaterials(obj);
+						obj.oldmaterial = new Array();
+						// if object has more that 1 material put them all in one array.
+						if(matAmount > 1){
+							console.log(yellowmat);
+							for(var i=0; i < matAmount; i++) {
+								obj.oldmaterial.push(obj.getMaterial(i));
+								obj.setMaterial(yellowmat, i);
+							}
+						} else {
+							obj.oldmaterial.push(obj.getMaterial());
+							obj.setMaterial(yellowmat, 0);
+						}
+
 					}
 					// return the old material when mouse is not over the object
-					if(hoverobj && hoverobj.getId() != "wall")
-						hoverobj.setMaterial(hoverobj.oldmaterial);
+					if(hoverobj && hoverobj.getId() != "wall"){
+						matAmountOld = countMaterials(hoverobj);
+						for(var i=0; i < matAmountOld; i++) {
+							hoverobj.setMaterial(hoverobj.oldmaterial[i], i);
+						}
+					}
 
 					hoverobj = obj;
 				} // end if (obj && obj != hoverobj)
 			}
 		}
 	} // end if(mouseOverCanvas)
+}
+
+// return number of material on the object.
+function countMaterials(obj){
+	var matAmount = 0;
+	var i = 0;
+	var noMat = true;
+
+	while(noMat != false) {
+		if(obj.getMaterial(i) != false)
+			matAmount++;
+		else
+			noMat = false;
+		i++;
+	}
+
+	return matAmount;
 }
 
 // Checks for key events and moves the camera.

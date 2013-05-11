@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <glge>
 
-	<material id="yellow" specular="0.00" color="#ffff00" emit="1"></material>
+	<material id="yellow" specular="1.00" color="#DEBB00"></material>
 
 	<camera id="mainCamera" loc_y="18.7" loc_x="-8.2" loc_z="-17.8" rot_order="ROT_YXZ" xtype="C_ORTHO" rot_z="0" rot_x="0" rot_y="0" />
 	
