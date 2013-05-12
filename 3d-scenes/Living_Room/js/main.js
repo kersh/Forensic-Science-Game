@@ -189,13 +189,21 @@ function mouselook(){
 				// convert to an object if the pick wasn't null.
 				obj = obj.object;
 
-				if(obj && obj != hoverobj){
-					if(obj.getId() != "wall"){
+				if(obj && (obj != hoverobj) &&
+						(obj.skeleton.id != "room_outside") &&
+						(obj.skeleton.id != "room_details1") &&
+						(obj.skeleton.id != "room_details2") &&
+						(obj.skeleton.id != "furniture")){
+					if( (obj.skeleton.id != "room_outside") &&
+						(obj.skeleton.id != "room_details1") &&
+						(obj.skeleton.id != "room_details2") &&
+						(obj.skeleton.id != "furniture")){
 						matAmount = countMaterials(obj);
+
 						obj.oldmaterial = new Array();
 						// if object has more that 1 material put them all in one array.
 						if(matAmount > 1){
-							console.log(yellowmat);
+
 							for(var i=0; i < matAmount; i++) {
 								obj.oldmaterial.push(obj.getMaterial(i));
 								obj.setMaterial(yellowmat, i);
@@ -207,11 +215,15 @@ function mouselook(){
 
 					}
 					// return the old material when mouse is not over the object
-					if(hoverobj && hoverobj.getId() != "wall"){
-						matAmountOld = countMaterials(hoverobj);
-						for(var i=0; i < matAmountOld; i++) {
-							hoverobj.setMaterial(hoverobj.oldmaterial[i], i);
-						}
+					if(hoverobj && 
+						(obj.skeleton.id != "room_outside") &&
+						(obj.skeleton.id != "room_details1") &&
+						(obj.skeleton.id != "room_details2") &&
+						(obj.skeleton.id != "furniture")){
+							matAmountOld = countMaterials(hoverobj);
+							for(var i=0; i < matAmountOld; i++) {
+								hoverobj.setMaterial(hoverobj.oldmaterial[i], i);
+							}
 					}
 
 					hoverobj = obj;

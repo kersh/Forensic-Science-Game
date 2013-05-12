@@ -383,10 +383,19 @@
 /* GENERATE DNA PROFILE */
 /*****************************************************/
 #ea_results {
-	width: 200px;
+	/*width: 200px;*/
 	padding: 0 0 0 16px;
 	margin: 10px 0 80px 0;
 }
+	#ea_results ul {
+		list-style-type: none;
+	}
+		#ea_results ul li {
+			float: left;
+			padding-right: 60px;
+			margin-right: 60px;
+			border-right: 1px solid #ccc;
+		}
 	#ea_results p.your_result:first-child {
 		border: none;
 	}

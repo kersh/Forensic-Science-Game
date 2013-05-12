@@ -34,15 +34,15 @@
 	</script>
 	<script type="text/javascript">
 		jQuery(function() {
-			function getObject(object_id) {
+			function getObject(object_name) {
 				var budget_current;
 				var canRemove;
 				var object_data = new Array();
 				$.ajax({
 					type: 'POST',
-					url: 'index.php?action=getObject&object_id='+object_id,
+					url: 'index.php?action=getObject&object_name='+object_name,
 					async: false,
-					dataType: 'json',
+					dataType: "json",
 					cache: false,
 					success: function(result) {
 						object_data = result;
@@ -51,13 +51,13 @@
 							canRemove = true;
 							$('#evidenceBagNotice').hide();
 							$('#checkItemsBtn').removeAttr("disabled");
-							$('ul#evidences').append('<li id=itemLi'+ object_data[0] +' style="display: none;"><div class="li_background"></div><div class="removeBtn" onClick="removeObject('+object_data[0]+')">REMOVE</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£<span>'+ object_data[3] +'</span></p></li>');
-							$('#itemLi'+object_data[0]).slideDown();
+							$('ul#evidences').append('<li id=itemLi'+ object_data[1] +' style="display: none;"><div class="li_background"></div><div class="removeBtn" onClick="removeObject(\''+object_data[1]+'\')">REMOVE</div><img src="'+ object_data[2] +'" alt ="'+ object_data[1] +'" /><h5>'+ object_data[1] +'</h5><p class="objectPrice">£<span>'+ object_data[3] +'</span></p></li>');
+							$('#itemLi'+object_data[1]).slideDown();
 							budget_current = budget_current - object_data[3];
 							$('#budget span').text(budget_current);
 						} else {
 							canRemove = false;
-							$('#budget_warning').show().delay(4000).fadeOut();
+							// $('#budget_warning').show().delay(4000).fadeOut();
 						}
 					},
 				});
@@ -70,18 +70,19 @@
 			}
 			window.getObject=getObject;
 		});
-		function removeObject(id){
+		function removeObject(object_name){
+			console.log(object_name);
 			var budget_current;
 			var current_cost;
-			$('#itemLi'+id).slideUp('fast', function(){
-				current_cost = $('#itemLi'+id+' .objectPrice span').text();
+			$('#itemLi'+object_name).slideUp('fast', function(){
+				current_cost = $('#itemLi'+object_name+' .objectPrice span').text();
 				budget_current = $('#budget span').text();
 				budget_current = parseInt(budget_current) + parseInt(current_cost);
 				$('#budget span').text(budget_current);
 
 				$(this).remove();
 				jQuery(function(){
-					returnObject(id);
+					returnObject(object_name);
 				});
 				// show message if evidence bag is empty
 				if ($('ul#evidences li').length == 0) {

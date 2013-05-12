@@ -7,7 +7,18 @@
 	
 	<scene id="mainScene" camera="#mainCamera" ambient_color="#666">
 
-		<collada id="1" document="objects/expTest4/test.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="room_outside" document="objects/separateObjects/room_outside/room_outside.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="room_details1" document="objects/separateObjects/room_details1/room_details1.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="room_details2" document="objects/separateObjects/room_details2/room_details2.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="furniture" document="objects/separateObjects/furniture/furniture.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<!-- <collada id="ceiling" document="objects/separateObjects/ceiling/ceiling.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" /> -->
+		
+		<collada id="pizza_box" document="objects/separateObjects/pizza_box/pizza_box.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="knife" document="objects/separateObjects/knife/knife.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="glass_of_water1" document="objects/separateObjects/glass_of_water1/glass_of_water1.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="glass_of_water2" document="objects/separateObjects/glass_of_water2/glass_of_water2.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="bottle1" document="objects/separateObjects/bottle1/bottle1.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
+		<collada id="bottle2" document="objects/separateObjects/bottle2/bottle2.dae" loc_x="0" loc_y="-3" loc_z="-30" rot_y="2.57" scale="0.1" />
 
 		<light id="mainlight" loc_x="0" loc_y="25" loc_z="10" rot_x="-1.3"  attenuation_constant="0.3" type="L_POINT" />
 		<light id="mainlight" loc_x="20" loc_y="-15" loc_z="5" rot_x="1.3"  attenuation_constant="0.3" type="L_POINT" />

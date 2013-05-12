@@ -5,41 +5,50 @@
 </div>
 
 <div id="ea_results">
-	<p class="your_result">
-		Your value of EA1:
-		<strong><?php echo $EA1_user; ?></strong>
-	</p>
-	<p class="your_answer">
-		<?php if($EA1_check) : ?>
-			<span class="correct">Correct</span>
-		<?php else : ?>
-			<span class="wrong">Incorrect</span>
-		<?php endif; ?>
-	</p>
+	<ul>
+		<li>
+			<p class="your_result">
+				Your value of EA1:</br>
+				<strong><?php echo $EA1_user; ?></strong>
+			</p>
+			<p class="your_answer">
+				<?php if($EA1_check) : ?>
+					<span class="correct">Correct</span>
+				<?php else : ?>
+					<span class="wrong">Incorrect</span>
+				<?php endif; ?>
+			</p>
+		</li>
 
-	<p class="your_result">
-		Your value of EA3:
-		<strong><?php echo $EA3_user; ?></strong>
-	</p>
-	<p class="your_answer">
-		<?php if($EA3_check) : ?>
-			<span class="correct">Correct</span>
-		<?php else : ?>
-			<span class="wrong">Incorrect</span>
-		<?php endif; ?>
-	</p>
+		<li>
+			<p class="your_result">
+				Your value of EA3:</br>
+				<strong><?php echo $EA3_user; ?></strong>
+			</p>
+			<p class="your_answer">
+				<?php if($EA3_check) : ?>
+					<span class="correct">Correct</span>
+				<?php else : ?>
+					<span class="wrong">Incorrect</span>
+				<?php endif; ?>
+			</p>
+		</li>
 	
-	<p class="your_result">
-		Your value of EA4:
-		<strong><?php echo $EA4_user; ?></strong>
-	</p>
-	<p class="your_answer">
-		<?php if($EA4_check) : ?>
-			<span class="correct">Correct</span>
-		<?php else : ?>
-			<span class="wrong">Incorrect</span>
-		<?php endif; ?>
-	</p>
+		<li>
+			<p class="your_result">
+				Your value of EA4:</br>
+				<strong><?php echo $EA4_user; ?></strong>
+			</p>
+			<p class="your_answer">
+				<?php if($EA4_check) : ?>
+					<span class="correct">Correct</span>
+				<?php else : ?>
+					<span class="wrong">Incorrect</span>
+				<?php endif; ?>
+			</p>
+		</li>
+	</ul>
+	<div class="clearAll"></div>
 
 	<a href="index.php?action=chooseRoom&userBtn=logoutBtn&error=ok" class="btn btn-primary">Back to main menu</a>
 </div>

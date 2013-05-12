@@ -69,7 +69,7 @@
 		</div>
 		<div class="clearAll"></div>
 
-		<h5>We found DNA profile in poliec database that partly match your incomplete DNA profile:</h5>
+		<h5>We found DNA profile in police database that partly match your incomplete DNA profile:</h5>
 		<div class="dna_profile_lists">
 			<ul class="dna_profile_headers">
 				<li class="empty_field"></li>
